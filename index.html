@@ -1,196 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Deine App – Einfach. Schnell. Klar.</title>
-  <meta name="description" content="Die offizielle Landing Page für Deine App. Schneller Nutzen, klare Features, und Call-to-Action zum Download oder Newsletter." />
-  <meta name="robots" content="index,follow" />
-  
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Deine App – Einfach. Schnell. Klar." />
-  <meta property="og:description" content="Teste die neue App und sichere dir frühen Zugang." />
-  <meta property="og:image" content="/social-card.png" />
-  <meta property="og:url" content="https://deine-domain.de" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CarSpot</title>
+    <meta
+      name="description"
+      content="Die offizielle Landing Page für Deine App. Schneller Nutzen, klare Features, und Call-to-Action zum Download oder Newsletter."
+    />
+    <meta name="robots" content="index,follow" />
 
-  <!-- Favicon (kannst du später ersetzen) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23000000'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>A</text></svg>">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Deine App – Einfach. Schnell. Klar." />
+    <meta
+      property="og:description"
+      content="Teste die neue App und sichere dir frühen Zugang."
+    />
+    <meta property="og:image" content="/social-card.png" />
+    <meta property="og:url" content="https://deine-domain.de" />
 
-  <style>
-    :root{
-      --bg: #0b0f1a;
-      --card: #111726;
-      --muted: #9aa3b2;
-      --text: #eaf0ff;
-      --brand: #6aa6ff; /* primär */
-      --brand-2: #82ffd2; /* accent */
-      --maxw: 1120px;
-      --radius: 20px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(130,255,210,.15), transparent 60%), radial-gradient(900px 500px at 10% 10%, rgba(106,166,255,.15), transparent 60%), var(--bg);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji"}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
-    .logo-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg, var(--brand), var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
-    .logo-badge span{font-weight:800}
-    .nav a{opacity:.85;margin-left:18px}
-    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#081019;font-weight:700;box-shadow:var(--shadow)}
-    .cta--ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    <!-- Favicon (kannst du später ersetzen) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23000000'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>A</text></svg>"
+    />
 
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;padding:40px 0}
-    .hero h1{font-size: clamp(28px, 5vw, 56px);line-height:1.05;margin:0}
-    .hero p{color:var(--muted);font-size: clamp(16px, 2.2vw, 20px)}
-    .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
-
-    .mock{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:18px;box-shadow:var(--shadow)}
-    .screen{aspect-ratio: 9/19;border-radius:18px;background:radial-gradient(120% 80% at 30% 20%, rgba(130,255,210,.35), rgba(106,166,255,.18) 40%, rgba(0,0,0,.45) 75%), #0a0f1a;border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden}
-    .screen::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 1px, transparent 1px 10px);mix-blend-mode: overlay;opacity:.35}
-
-    .badges{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
-    .store-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 14px}
-
-    .section{margin:40px 0}
-    .cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px}
-    .card p{margin:0;color:var(--muted)}
-
-    .newsletter{display:flex;gap:10px;flex-wrap:wrap}
-    .newsletter input{flex:1;min-width:220px;border-radius:14px;border:1px solid rgba(255,255,255,.2);padding:12px 14px;background:rgba(255,255,255,.02);color:var(--text)}
-    .newsletter button{border:none}
-
-    footer{margin:48px 0;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr;gap:24px}
-      header{flex-wrap:wrap}
-      .cards{grid-template-columns:1fr}
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <div class="logo-badge"><span>▲</span></div>
-        <span>Deine App</span>
-      </div>
-      <nav class="nav">
-        <a href="#features">Features</a>
-        <a href="#preise">Preise</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </header>
-
-    <section class="hero" id="home">
-      <div>
-        <h1>Die schlanke Lösung für dein tägliches Problem</h1>
-        <p>Erledige X schneller, behalte Y im Blick und automatisiere Z – mit einer App, die in Sekunden verstanden ist.</p>
-        <div class="actions">
-          <a class="cta" href="#newsletter">Frühen Zugang sichern</a>
-          <a class="cta cta--ghost" href="#features">Mehr erfahren</a>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- HIER: logo--xl sorgt nur hier für größere Größen -->
+        <div class="logo logo--xl">
+          <div class="logo-badge">
+            <img
+              src="./carspot-logo.png"
+              alt="CarSpot Logo"
+              class="logo-icon"
+            />
+          </div>
+          <span>CarSpot</span>
         </div>
-        <div class="badges" aria-label="Download Badges (Platzhalter)">
-          <a class="store-badge" href="#" aria-label="App Store (bald)"> App Store (bald)</a>
-          <a class="store-badge" href="#" aria-label="Google Play (bald)">▶︎ Google Play (bald)</a>
+      </header>
+
+      <section class="hero" id="home">
+        <div>
+          <h1>Endlich keine Spotlosigkeit mehr - hier ist CarSpot! ;)</h1>
+          <br />
+          <p>
+            Entdecke und bewerte coole Spots in deiner Umgebung – teile deine
+            Meinung mit anderen! Hast du selbst einen Lieblingsspot? Füge ihn
+            einfach in der App hinzu, damit alle davon profitieren. Die besten
+            Orte kannst du außerdem favorisieren und direkt mit Freunden teilen.
+          </p>
+          <br />
+          <br />
+          <!-- Screenshot -->
+          <div class="mock">
+            <img
+              class="mock-img"
+              src="./mock.png"
+              alt="CarSpot App Screenshot"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <br />
+          <div class="badges" aria-label="Download Badges (Platzhalter)">
+            <a class="store-badge" href="#" aria-label="App Store (bald)"
+              > App&nbsp;Store (bald)</a
+            >
+            <a class="store-badge" href="#" aria-label="Google Play (bald)"
+              >▶︎ Google&nbsp;Play (bald)</a
+            >
+          </div>
         </div>
-      </div>
-      <div class="mock" aria-hidden="true">
-        <div class="screen"></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="features">
-      <h2>Warum Nutzer unsere App lieben</h2>
-      <div class="cards" role="list">
-        <article class="card" role="listitem">
-          <h3>⚡️ Superschnell</h3>
-          <p>Startet in < 1s, läuft offline-fähig, bleibt reaktiv – auch bei vielen Daten.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>🔒 Datenschutz-first</h3>
-          <p>Keine unnötigen Berechtigungen. DSGVO-konform, Server in der EU.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>🧩 Einfach integrierbar</h3>
-          <p>Export als CSV, Zapier-/Make-Integrationen, API (bald).</p>
-        </article>
-      </div>
-    </section>
+      <section class="section" id="kontakt">
+        <h2>Kontakt</h2>
+        <p>
+          Du hast Fragen? Kontaktiere mich:
+          <a href="mailto:info@carspot.gg">info@carspot.gg</a>
+        </p>
+      </section>
 
-    <section class="section" id="preise">
-      <h2>Transparente Preise</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Starter</h3>
-          <p>Gratis · Für erste Tests</p>
-          <ul>
-            <li>Bis 3 Projekte</li>
-            <li>Basis-Support</li>
-          </ul>
-          <a class="cta" href="#newsletter">Loslegen</a>
+      <footer>
+        <div>© <span id="y"></span> CarSpot</div>
+        <div>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
-        <div class="card">
-          <h3>Pro</h3>
-          <p>9 € / Monat · Für Power-User</p>
-          <ul>
-            <li>Unbegrenzt</li>
-            <li>Priorisierter Support</li>
-          </ul>
-          <a class="cta" href="#newsletter">14 Tage testen</a>
-        </div>
-        <div class="card">
-          <h3>Team</h3>
-          <p>29 € / Monat · Für kleine Teams</p>
-          <ul>
-            <li>Bis 10 Nutzer</li>
-            <li>Rollen & Rechte</li>
-          </ul>
-          <a class="cta" href="#newsletter">Anfrage senden</a>
-        </div>
-      </div>
-    </section>
+      </footer>
+    </div>
 
-    <section class="section" id="newsletter">
-      <h2>Warte­liste & Updates</h2>
-      <p>Trag dich ein, um über Launch & Angebote informiert zu werden.</p>
-      <form class="newsletter" action="mailto:hello@example.com" method="post" enctype="text/plain">
-        <input aria-label="E-Mail" name="email" type="email" placeholder="dein.name@mail.de" required />
-        <button class="cta" type="submit">Eintragen</button>
-      </form>
-      <small style="color:var(--muted)">* Du kannst dich jederzeit wieder austragen.</small>
-    </section>
+    <script>
+      // Jahr im Footer automatisch setzen
+      document.getElementById("y").textContent = new Date().getFullYear();
 
-    <section class="section" id="kontakt">
-      <h2>Kontakt</h2>
-      <p>Fragen? Schreib uns an <a href="mailto:hello@example.com">hello@example.com</a>.</p>
-    </section>
-
-    <footer>
-      <div>© <span id="y"></span> Deine App</div>
-      <div>
-        <a href="#">Impressum</a> · <a href="#">Datenschutz</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Jahr im Footer automatisch setzen
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Smooth scroll für interne Links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      })
-    })
-  </script>
-</body>
+      // Smooth scroll für interne Links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href").slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
