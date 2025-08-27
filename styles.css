@@ -287,12 +287,56 @@ footer {
   }
 }
 /* Nur im Header-Logo: SOLIDE FARBE */
-.logo--xl .logo-badge{
-  background: #172842;                 /* deine Wunschfarbe */
+.logo--xl .logo-badge {
+  background: #172842; /* deine Wunschfarbe */
 }
 
 /* oder: VERLAUF */
-.logo--xl .logo-badge{
+.logo--xl .logo-badge {
   background: linear-gradient(135deg, #172842, #1c2a44);
-box-shadow: #081019 0px 1px 8px; /* optionaler Schatten */
+  box-shadow: #081019 0px 1px 8px; /* optionaler Schatten */
+}
+/* ---------- Social Links (Instagram) ---------- */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease, background 0.15s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(106, 166, 255, 0.08),
+    rgba(130, 255, 210, 0.06)
+  );
+  box-shadow: var(--shadow);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.social-handle {
+  color: var(--muted);
+  font-size: 14px;
 }
