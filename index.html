@@ -29,6 +29,16 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Zusatz-Styles für deaktivierte Badges */
+      .store-badge.disabled {
+        pointer-events: none; /* Klicks deaktivieren */
+        opacity: 0.6; /* ausgegraut */
+        cursor: not-allowed; /* Mauszeiger als Hinweis */
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -48,7 +58,7 @@
 
       <section class="hero" id="home">
         <div>
-          <h1>Endlich keine Spotlosigkeit mehr - hier ist CarSpot! ;)</h1>
+          <h1>Endlich keine Spotlosigkeit mehr – hier ist CarSpot! 😉</h1>
           <br />
           <p>
             Entdecke und bewerte coole Spots in deiner Umgebung – teile deine
@@ -70,12 +80,22 @@
 
           <br />
           <div class="badges" aria-label="Download Badges (Platzhalter)">
-            <a class="store-badge" href="#" aria-label="App Store (bald)"
-              > App&nbsp;Store (bald)</a
+            <a
+              class="store-badge disabled"
+              href="#"
+              aria-disabled="true"
+              title="Bald verfügbar"
             >
-            <a class="store-badge" href="#" aria-label="Google Play (bald)"
-              >▶︎ Google&nbsp;Play (bald)</a
+               App&nbsp;Store (bald)
+            </a>
+            <a
+              class="store-badge disabled"
+              href="#"
+              aria-disabled="true"
+              title="Bald verfügbar"
             >
+              ▶︎ Google&nbsp;Play (bald)
+            </a>
           </div>
         </div>
       </section>
