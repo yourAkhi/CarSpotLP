@@ -13,7 +13,11 @@
   --brand-name-size: 28px;
   --logo-gap: 14px;
 
+  --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Hilft Browsern beim Dark-Rendering (Form Controls etc.) */
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -25,6 +29,7 @@ html, body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
   overflow: hidden; /* Body nicht scrollen -> kein Bounce in In-App-Browsern */
+  background-color: var(--bg); /* WICHTIG: füllt die Notch/Safe-Area in iOS */
 }
 
 a {
@@ -49,7 +54,7 @@ body::before {
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px;
+  padding: calc(24px + var(--safe-top)) 24px 24px 24px; /* Safe-Area oben einrechnen */
 
   height: 100vh;                 /* Fallback */
   display: flex;
@@ -64,12 +69,8 @@ body::before {
 }
 .container::-webkit-scrollbar { display: none; } /* Chrome/Safari/Edge */
 
-@supports (height: 100dvh) {
-  .container { height: 100dvh; }
-}
-@supports (height: 100svh) {
-  .container { height: 100svh; } /* stabilste Höhe in In-App-Browsern */
-}
+@supports (height: 100dvh) { .container { height: 100dvh; } }
+@supports (height: 100svh) { .container { height: 100svh; } }
 
 main {
   flex: 1 1 auto;
@@ -83,7 +84,7 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 8px 0;
+  padding: 8px 0; /* Safe-Top ist bereits in .container enthalten */
 }
 
 /* Logo */
