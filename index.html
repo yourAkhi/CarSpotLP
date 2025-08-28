@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>CarSpot</title>
     <meta
       name="description"
@@ -69,10 +72,20 @@
             </div>
 
             <div class="badges" aria-label="Download Badges (Platzhalter)">
-              <a class="store-badge disabled" href="#" aria-disabled="true" title="Bald verfügbar">
+              <a
+                class="store-badge disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                role="link"
+              >
                  App&nbsp;Store (bald)
               </a>
-              <a class="store-badge disabled" href="#" aria-disabled="true" title="Bald verfügbar">
+              <a
+                class="store-badge disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                role="link"
+              >
                 ▶︎ Google&nbsp;Play (bald)
               </a>
             </div>
@@ -80,7 +93,7 @@
         </section>
       </main>
 
-      <!-- Footer-Block mit Kontakt, OHNE eigenen Hintergrund -->
+      <!-- Footer-Block mit Kontakt (transparent, nutzt Body-Background) -->
       <footer class="footer">
         <section class="kontakt">
           <h2>Kontakt</h2>
