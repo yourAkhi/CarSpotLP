@@ -10,7 +10,7 @@
     <title>CarSpot</title>
     <meta
       name="description"
-      content="Die besten Spots aus deiner Umgebung nur bei CarSpot!"
+      content="Die offizielle Landing Page für CarSpot!"
     />
     <meta name="robots" content="index,follow" />
 
@@ -38,8 +38,6 @@
               src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
               alt="CarSpot Logo"
               class="logo-icon"
-              width="512"
-              height="512"
             />
           </div>
           <span>CarSpot</span>
@@ -66,8 +64,6 @@
                 alt="CarSpot App Screenshot"
                 loading="lazy"
                 decoding="async"
-                width="1200"
-                height="900"
               />
             </div>
 
@@ -92,7 +88,6 @@
           </div>
         </section>
 
-        <!-- Kontakt -->
         <section class="section" id="kontakt">
           <h2>Kontakt</h2>
           <p>
@@ -104,19 +99,11 @@
             <a
               href="https://www.instagram.com/carspot.gg/"
               target="_blank"
-              rel="noopener noreferrer"
               class="social-link"
               aria-label="CarSpot auf Instagram"
             >
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 4a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm5.5-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 4a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm5.5-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
               </svg>
               <span class="social-handle">@carspot.gg</span>
             </a>
@@ -137,9 +124,7 @@
       document.getElementById("y").textContent = new Date().getFullYear();
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
-          const href = a.getAttribute("href");
-          const id = href.slice(1);
-          if (!id) return;
+          const id = a.getAttribute("href").slice(1);
           const el = document.getElementById(id);
           if (el) {
             e.preventDefault();

@@ -24,15 +24,15 @@ html, body {
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-  overflow: hidden;
+  overflow: hidden; /* Body nicht scrollen -> kein Bounce in In-App-Browsern */
 }
 
-/* globale Links: wie immer */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Hintergrund an Viewport gepinnt, damit beim Overscroll nichts „durchscheint“ */
 body::before {
   content: "";
   position: fixed;
@@ -45,23 +45,30 @@ body::before {
     var(--bg);
 }
 
+/* Interner Scroller: .container scrollt (Scrollbalken unsichtbar) */
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 24px;
 
-  height: 100vh;
+  height: 100vh;                 /* Fallback */
   display: flex;
   flex-direction: column;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+
+  /* Scrollbar verstecken (ohne Scroll zu deaktivieren) */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge Legacy */
 }
+.container::-webkit-scrollbar { display: none; } /* Chrome/Safari/Edge */
+
 @supports (height: 100dvh) {
   .container { height: 100dvh; }
 }
 @supports (height: 100svh) {
-  .container { height: 100svh; }
+  .container { height: 100svh; } /* stabilste Höhe in In-App-Browsern */
 }
 
 main {
@@ -111,6 +118,12 @@ header {
   --logo-size: 84px;
   --brand-name-size: 36px;
   --logo-gap: 16px;
+}
+
+/* Spezielle dunkle Badge-Variante im Header */
+.logo--xl .logo-badge {
+  background: linear-gradient(135deg, #172842, #1c2a44);
+  box-shadow: #081019 0px 1px 8px;
 }
 
 /* Hero */
@@ -163,7 +176,7 @@ header {
 /* Kontakt */
 .section { margin: 40px 0; }
 #kontakt {
-  margin-top: auto;
+  margin-top: auto;        /* klebt Kontakt unten im main */
   padding-top: 32px;
 }
 
