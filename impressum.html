@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Impressum – CarSpot</title>
-    <meta name="robots" content="noindex,follow" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23000000'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>C</text></svg>"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="logo logo--xl">
-          <div class="logo-badge">
-            <!-- Logo aus Supabase -->
-            <img
-              src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
-              alt="CarSpot Logo"
-              class="logo-icon"
-            />
-          </div>
-          <span>CarSpot</span>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum - CarSpot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo logo--xl">
+        <div class="logo-badge">
+          <img
+            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
+            alt="CarSpot Logo"
+            class="logo-icon"
+          />
         </div>
-      </header>
+        <span>CarSpot</span>
+      </div>
+    </header>
 
-      <section class="section" id="impressum">
-        <p>
-          <em>Noch im Aufbau - die App ist noch nicht Live!</em>
-        </p>
-      </section>
+    <main class="section">
+      <h1>Impressum</h1>
 
-      <footer>
-        <div>© <span id="y"></span> CarSpot</div>
-        <div>
-          <a href="impressum.html">Impressum</a> ·
-          <a href="datenschutz.html">Datenschutz</a> ·
-          <a href="index.html">Startseite</a>
-        </div>
-      </footer>
-    </div>
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      <p><strong>Angaben gemäß § 5 TMG</strong></p>
+      <p>
+        Murat Uzundag<br />
+        Mülhauser Straße 10<br />
+        81379 München<br />
+        Deutschland
+      </p>
+
+      <p><strong>Kontakt</strong></p>
+      <p>
+        <u>E-Mail:</u><br> <a href="mailto:info@carspot.gg">info@carspot.gg</a><br /><br>
+        <u>Instagram:</u><br> <a href="https://www.instagram.com/carspot.gg/" target="_blank">@carspot.gg</a>
+      </p>
+
+      <p><strong>Registerangaben</strong></p>
+      <p>Kein Handelsregistereintrag vorhanden.</p>
+
+      <p><strong>Umsatzsteuer-ID</strong></p>
+      <p>Nicht vorhanden.</p>
+
+      <h2>Haftungsausschluss</h2>
+      <p>
+        <strong>Haftung für Inhalte</strong><br />
+        Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+      </p>
+      <p>
+        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.
+      </p>
+
+      <p>
+        <strong>Haftung für Links</strong><br />
+        Mein Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+      </p>
+      <p>
+        Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.
+      </p>
+
+      <p>
+        <strong>Urheberrecht</strong><br />
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+      </p>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> CarSpot</div>
+      <div>
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
