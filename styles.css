@@ -200,3 +200,8 @@ footer .kontakt { margin-bottom: 40px; }
     --logo-gap: 14px;
   }
 }
+.store-badge.disabled {
+  pointer-events: none;   /* keine Klicks */
+  cursor: not-allowed;    /* zeigt deaktivierten Cursor */
+
+}
