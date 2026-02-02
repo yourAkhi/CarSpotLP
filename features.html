@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>CarSpot – Features</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="features.css" />
+  </head>
+
+  <body>
+    <!-- ===== STEP RAIL ===== -->
+    <nav class="step-rail" aria-label="Tutorial Schritte">
+      <a class="step" href="#top">
+        <span class="dot"></span>
+        <span class="label">Start</span>
+      </a>
+      <a class="step" href="#favoriten">
+        <span class="dot"></span>
+        <span class="label">Favoriten</span>
+      </a>
+      <a class="step" href="#spots">
+        <span class="dot"></span>
+        <span class="label">Spots</span>
+      </a>
+      <a class="step" href="#spot-erstellen">
+        <span class="dot"></span>
+        <span class="label">Spot</span>
+      </a>
+      <a class="step" href="#hotspot-erstellen">
+        <span class="dot"></span>
+        <span class="label">Hotspot</span>
+      </a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-title hero-title--with-logo">
+          <img
+            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
+            alt="CarSpot Logo"
+            class="hero-logo"
+            loading="eager"
+            decoding="async"
+          />
+          <div>
+            <h1>CarSpot Features</h1>
+            <p>Tippe im Menü, um dir die Details der Features anzusehen.</p>
+          </div>
+        </div>
+
+        <div class="phone">
+          <img
+            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/tutorial.png"
+            alt="CarSpot Menü"
+          />
+
+          <svg
+            class="overlay"
+            viewBox="0 0 1080 2048"
+            preserveAspectRatio="none"
+          >
+            <a href="#favoriten">
+              <rect x="160" y="565" width="760" height="112"></rect>
+            </a>
+            <a href="#spots">
+              <rect x="160" y="700" width="760" height="112"></rect>
+            </a>
+            <a href="#spot-erstellen">
+              <rect x="160" y="835" width="760" height="112"></rect>
+            </a>
+            <a href="#hotspot-erstellen">
+              <rect x="160" y="970" width="760" height="112"></rect>
+            </a>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTIONS ===== -->
+    <section class="page" id="favoriten">
+      <div class="card">
+        <h2>Meine Favoriten</h2>
+        <p>Hier erklärst du, wie Favoriten funktionieren.</p>
+        <a class="back" href="#top">↑ Zurück</a>
+      </div>
+    </section>
+
+    <section class="page" id="spots">
+      <div class="card">
+        <h2>Meine Spots</h2>
+        <p>Übersicht über gespeicherte Spots.</p>
+        <a class="back" href="#top">↑ Zurück</a>
+      </div>
+    </section>
+
+    <section class="page" id="spot-erstellen">
+      <div class="card">
+        <h2>Spot erstellen</h2>
+        <p>Schritt-für-Schritt Anleitung.</p>
+        <a class="back" href="#top">↑ Zurück</a>
+      </div>
+    </section>
+
+    <section class="page" id="hotspot-erstellen">
+      <div class="card">
+        <h2>Hotspot erstellen</h2>
+        <p>Erklärung zu Hotspots.</p>
+        <a class="back" href="#top">↑ Zurück</a>
+      </div>
+    </section>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+      // ===== Smooth Scroll (SVG Hotspots + Step Rail) =====
+      const runNav = (target) => {
+        if (!target) return;
+
+        // Temporär erlauben: programmatic navigation
+        window.__ALLOW_NAV_SCROLL__ = true;
+
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Nach kurzer Zeit wieder sperren (smooth scroll dauert i.d.R. < 1s)
+        clearTimeout(window.__ALLOW_NAV_SCROLL_TIMEOUT__);
+        window.__ALLOW_NAV_SCROLL_TIMEOUT__ = setTimeout(() => {
+          window.__ALLOW_NAV_SCROLL__ = false;
+        }, 900);
+      };
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          e.preventDefault();
+          runNav(target);
+
+          // Hash optional setzen (für Back/Deep-Link), ohne Jump
+          history.pushState(null, "", href);
+        });
+      });
+
+      // ===== Active Step per IntersectionObserver =====
+      const steps = Array.from(document.querySelectorAll(".step-rail .step"));
+      const stepTargets = steps
+        .map((s) => document.querySelector(s.getAttribute("href")))
+        .filter(Boolean);
+
+      const setActive = (id) => {
+        steps.forEach((s) => s.classList.remove("is-active"));
+        const active = document.querySelector(`.step-rail a[href="#${id}"]`);
+        if (active) active.classList.add("is-active");
+      };
+
+      // Start aktiv
+      setActive("top");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          // Wähle die Section mit der höchsten Sichtbarkeit
+          const best = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (best && best.target && best.target.id) setActive(best.target.id);
+        },
+        { threshold: [0.25, 0.45, 0.65] },
+      );
+
+      stepTargets.forEach((s) => observer.observe(s));
+
+      // ===== SCROLL LOCK (User-Scroll komplett sperren) =====
+      window.__ALLOW_NAV_SCROLL__ = false;
+
+      const preventIfNotAllowed = (e) => {
+        if (!window.__ALLOW_NAV_SCROLL__) e.preventDefault();
+      };
+
+      // Maus/Trackpad
+      window.addEventListener("wheel", preventIfNotAllowed, { passive: false });
+
+      // Touch (Mobile)
+      window.addEventListener("touchmove", preventIfNotAllowed, {
+        passive: false,
+      });
+
+      // Tastatur scroll keys sperren
+      window.addEventListener("keydown", (e) => {
+        if (window.__ALLOW_NAV_SCROLL__) return;
+
+        const keys = [
+          "ArrowUp",
+          "ArrowDown",
+          "PageUp",
+          "PageDown",
+          "Home",
+          "End",
+          " ",
+        ];
+        if (keys.includes(e.key)) e.preventDefault();
+      });
+
+      // Falls jemand dennoch scrollt (z.B. Browser quirks) => zurück "snappen"
+      let lastAllowedY = window.scrollY;
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.__ALLOW_NAV_SCROLL__) {
+            lastAllowedY = window.scrollY;
+            return;
+          }
+          // zurück auf den letzten erlaubten Scrollstand
+          if (window.scrollY !== lastAllowedY) window.scrollTo(0, lastAllowedY);
+        },
+        { passive: true },
+      );
+
+      // Wenn Seite mit Hash geladen wurde, dahin navigieren (aber ohne User-Scroll)
+      window.addEventListener("load", () => {
+        if (location.hash) {
+          const t = document.querySelector(location.hash);
+          if (t) runNav(t);
+        }
+      });
+    </script>
+  </body>
+</html>

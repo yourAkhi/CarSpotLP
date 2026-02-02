@@ -1,0 +1,260 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background: #0b1020;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+}
+
+.hero-inner {
+  width: min(430px, 100%);
+}
+
+.hero-title {
+  margin-bottom: 12px;
+}
+
+.hero-title h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.hero-title p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+/* ================= PHONE IMAGE ================= */
+.phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1080 / 2048;
+}
+
+.phone img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay rect {
+  fill: transparent;
+  cursor: pointer;
+}
+
+/* ================= CONTENT SECTIONS ================= */
+.page {
+  min-height: 100svh;
+  padding: 24px 14px 56px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  width: min(760px, 100%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 18px 16px 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* ================= STEP RAIL ================= */
+.step-rail {
+  position: fixed;
+  top: 50%;
+  right: 6px; /* GANZ RECHTS */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 100;
+}
+
+/* Vertikale Linie */
+.step-rail::before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Step */
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Punkt */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Label links vom Punkt */
+.label {
+  position: absolute;
+  right: 18px;
+  font-size: 10px;              /* kleiner */
+  padding: 4px 7px;             /* kleiner */
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateX(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover */
+.step .label {
+  opacity: 0;
+  transform: translateX(4px);
+}
+
+.step.is-active .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step:hover .dot {
+  transform: scale(1.15);
+}
+
+/* Active */
+.step.is-active .dot {
+  background: #ffffff;
+  transform: scale(1.25);
+}
+
+/* ===== HERO TITLE WITH LOGO (exakt gleiche Höhe) ===== */
+.hero-title--with-logo {
+  display: flex;
+  align-items: center;       /* WICHTIG: gleiche Höhe */
+  gap: 12px;
+}
+
+/* Überschrift */
+.hero-title--with-logo h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;            /* gleiche optische Höhe */
+}
+
+/* Logo exakt auf Text-Höhe */
+.hero-logo {
+  width: 42px;               /* ≈ Schriftgröße h1 */
+  height: 42px;
+  flex-shrink: 0;
+
+  padding: 3px;
+  border-radius: 6px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+/* Subline getrennt */
+.hero-subline {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 430px) {
+  .step-rail {
+    right: 4px;
+  }
+
+  .label {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+/* ===== SCROLL LOCK (Scrollbar verstecken) ===== */
+html, body {
+  height: 100%;
+}
+
+/* Scrollbar verstecken (damit man nicht "ziehen" kann) */
+body {
+  scrollbar-width: none;         /* Firefox */
+}
+body::-webkit-scrollbar {
+  width: 0;                      /* Chrome/Safari */
+  height: 0;
+}
+
+
+
