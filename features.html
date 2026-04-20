@@ -2,132 +2,197 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <title>CarSpot – Features</title>
+    <title>CarSpot – Kurzanleitung & Features</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta
+      name="description"
+      content="Entdecke die wichtigsten CarSpot Funktionen: Spots finden, Favoriten speichern, eigene Spots hinzufügen und mit der Community interagieren."
+    />
     <link rel="stylesheet" href="features.css" />
   </head>
 
   <body>
-    <!-- ===== STEP RAIL ===== -->
-    <nav class="step-rail" aria-label="Tutorial Schritte">
-      <a class="step" href="#top">
-        <span class="dot"></span>
-        <span class="label">Start</span>
-      </a>
-      <a class="step" href="#favoriten">
-        <span class="dot"></span>
-        <span class="label">Favoriten</span>
-      </a>
-      <a class="step" href="#spots">
-        <span class="dot"></span>
-        <span class="label">Spots</span>
-      </a>
-      <a class="step" href="#spot-erstellen">
-        <span class="dot"></span>
-        <span class="label">Spot</span>
-      </a>
-      <a class="step" href="#hotspot-erstellen">
-        <span class="dot"></span>
-        <span class="label">Hotspot</span>
-      </a>
-    </nav>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Zur Startseite von CarSpot">
+          <span class="brand-badge">
+            <img
+              src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
+              alt="CarSpot Logo"
+              class="brand-logo"
+            />
+          </span>
+          <span>CarSpot</span>
+        </a>
+      </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="hero-title hero-title--with-logo">
-          <img
-            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
-            alt="CarSpot Logo"
-            class="hero-logo"
-            loading="eager"
-            decoding="async"
-          />
-          <div>
-            <h1>CarSpot Features</h1>
-            <p>Tippe im Menü, um dir die Details der Features anzusehen.</p>
+      <main>
+        <section class="hero" id="top">
+          <div class="hero-copy">
+            <h1>Die wichtigsten CarSpot Features auf einen Blick</h1>
+            <p>
+              Mit CarSpot findest du coole Spots in deiner Umgebung,
+              speicherst deine Favoriten, bewertest Orte und teilst eigene
+              Entdeckungen direkt mit der Community.
+            </p>
+
+            <ul class="hero-points" aria-label="Schnellüberblick der wichtigsten Funktionen">
+              <li>Spots auf der Karte entdecken</li>
+              <li>Favoriten speichern und teilen</li>
+              <li>Eigene Spots mit Bildern hinzufügen</li>
+              <li>Kommentare und Bewertungen nutzen</li>
+            </ul>
           </div>
+        </section>
+
+        <section class="feature-section" id="karte">
+          <div class="section-head">
+            <span class="section-kicker">01 · Entdecken</span>
+            <h2>Spots auf der Karte finden</h2>
+            <p>
+              CarSpot zeigt dir coole Spots in deiner Umgebung, finde schnell neue Ziele und lasse dich
+              direkt dorthin navigieren.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Was du machen kannst</h3>
+              <ul class="check-list">
+                <li>Spots in deiner Nähe auf der Karte entdecken</li>
+                <li>Spots antippen und sofort die wichtigsten Infos sehen</li>
+                <li>Direkt zur Navigation in deine Karten-App wechseln</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="feature-section" id="favoriten">
+          <div class="section-head">
+            <span class="section-kicker">02 · Speichern</span>
+            <h2>Favoriten sichern und schneller wiederfinden</h2>
+            <p>
+              Besonders gute Spots musst du dir nicht merken – speichere sie
+              einfach in deinen Favoriten.
+            </p>
+          </div>
+
+          <div class="feature-grid three-up">
+            <article class="feature-card">
+              <h3>Favorit setzen</h3>
+              <p>
+                Markiere interessante Spots direkt in der App und sammle deine
+                persönlichen Highlights zentral an einem Ort.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3>Eigene Übersicht</h3>
+              <p>
+                Im Bereich <strong>Meine Favoriten</strong> findest du alle
+                gespeicherten Orte kompakt wieder.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3>Mit Freunden teilen</h3>
+              <p>
+                Favoriten kannst du mit Freunden teilen – so findet jeder schnell die besten Spots.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="feature-section" id="spots">
+          <div class="section-head">
+            <span class="section-kicker">03 · Teilen</span>
+            <h2>Eigene Spots erstellen und verwalten</h2>
+            <p>
+              Hast du selbst einen starken Spot entdeckt, kannst du ihn direkt
+              in CarSpot anlegen und der Community zur Verfügung stellen.
+            </p>
+          </div>
+
+          <div class="feature-grid two-up">
+            <article class="feature-card tall-card">
+              <h3>So erstellst du einen Spot</h3>
+              <ol class="step-list">
+                <li>Öffne den Assistent zum Spot anlegen</li>
+                <li>Name, Straße und Beschreibung eintragen</li>
+                <li>Standort auf der Karte festlegen</li>
+                <li>Bilder hochladen und Hauptbild auswählen</li>
+                <li>Spot speichern und veröffentlichen</li>
+              </ol>
+            </article>
+
+            <article class="feature-card tall-card">
+              <h3>Danach hast du alles im Griff</h3>
+              <ul class="check-list">
+                <li>Deine eigenen Spots in <strong>Meine Spots</strong> ansehen</li>
+                <li>Bilder verwalten</li>
+                <li>Bewertungen und Kommentare verfolgen</li>
+                <li>Spots bei Bedarf anpassen oder erneut aufrufen</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="feature-section" id="community">
+          <div class="section-head">
+            <span class="section-kicker">04 · Community</span>
+            <h2>Bewerten und kommentieren</h2>
+            <p>
+              CarSpot lebt von der Community. Nutzer können Spots bewerten,
+              kommentieren und ihre Erfahrungen direkt mit anderen teilen.
+            </p>
+          </div>
+
+          <div class="feature-grid three-up">
+            <article class="feature-card">
+              <h3>Bewertungen</h3>
+              <p>
+                Gib Spots Sterne und hilf anderen dabei, besonders gute Orte
+                schneller zu erkennen.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3>Kommentare</h3>
+              <p>
+                Teile deine Eindrücke, Tipps oder Hinweise direkt unter einem
+                Spot mit der Community.
+              </p>
+            </article>
+          </div>
+
+        </section>
+
+        <section class="cta-section">
+          <div class="cta-card">
+            <span class="eyebrow">Bereit für CarSpot?</span>
+            <h2>CarSpot lebt von der Community</h2>
+            <p>
+              Entdecke neue Orte, teile deine eigenen Favoriten mit anderen Autofans und hilf dabei, die Karte mit jeder neuen Empfehlung noch wertvoller zu machen.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="index.html#home">Zur Startseite</a>
+              <a class="btn btn-secondary" href="index.html#kontakt">Kontakt</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>© <span id="y"></span> CarSpot</div>
+        <div>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
+      </footer>
+    </div>
 
-        <div class="phone">
-          <img
-            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/tutorial.png"
-            alt="CarSpot Menü"
-          />
-
-          <svg
-            class="overlay"
-            viewBox="0 0 1080 2048"
-            preserveAspectRatio="none"
-          >
-            <a href="#favoriten">
-              <rect x="160" y="565" width="760" height="112"></rect>
-            </a>
-            <a href="#spots">
-              <rect x="160" y="700" width="760" height="112"></rect>
-            </a>
-            <a href="#spot-erstellen">
-              <rect x="160" y="835" width="760" height="112"></rect>
-            </a>
-            <a href="#hotspot-erstellen">
-              <rect x="160" y="970" width="760" height="112"></rect>
-            </a>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SECTIONS ===== -->
-    <section class="page" id="favoriten">
-      <div class="card">
-        <h2>Meine Favoriten</h2>
-        <p>Hier erklärst du, wie Favoriten funktionieren.</p>
-        <a class="back" href="#top">↑ Zurück</a>
-      </div>
-    </section>
-
-    <section class="page" id="spots">
-      <div class="card">
-        <h2>Meine Spots</h2>
-        <p>Übersicht über gespeicherte Spots.</p>
-        <a class="back" href="#top">↑ Zurück</a>
-      </div>
-    </section>
-
-    <section class="page" id="spot-erstellen">
-      <div class="card">
-        <h2>Spot erstellen</h2>
-        <p>Schritt-für-Schritt Anleitung.</p>
-        <a class="back" href="#top">↑ Zurück</a>
-      </div>
-    </section>
-
-    <section class="page" id="hotspot-erstellen">
-      <div class="card">
-        <h2>Hotspot erstellen</h2>
-        <p>Erklärung zu Hotspots.</p>
-        <a class="back" href="#top">↑ Zurück</a>
-      </div>
-    </section>
-
-    <!-- ===== SCRIPT ===== -->
     <script>
-      // ===== Smooth Scroll (SVG Hotspots + Step Rail) =====
-      const runNav = (target) => {
-        if (!target) return;
-
-        // Temporär erlauben: programmatic navigation
-        window.__ALLOW_NAV_SCROLL__ = true;
-
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        // Nach kurzer Zeit wieder sperren (smooth scroll dauert i.d.R. < 1s)
-        clearTimeout(window.__ALLOW_NAV_SCROLL_TIMEOUT__);
-        window.__ALLOW_NAV_SCROLL_TIMEOUT__ = setTimeout(() => {
-          window.__ALLOW_NAV_SCROLL__ = false;
-        }, 900);
-      };
+      document.getElementById("y").textContent = new Date().getFullYear();
 
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
@@ -136,95 +201,9 @@
           if (!target) return;
 
           e.preventDefault();
-          runNav(target);
-
-          // Hash optional setzen (für Back/Deep-Link), ohne Jump
-          history.pushState(null, "", href);
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", href);
         });
-      });
-
-      // ===== Active Step per IntersectionObserver =====
-      const steps = Array.from(document.querySelectorAll(".step-rail .step"));
-      const stepTargets = steps
-        .map((s) => document.querySelector(s.getAttribute("href")))
-        .filter(Boolean);
-
-      const setActive = (id) => {
-        steps.forEach((s) => s.classList.remove("is-active"));
-        const active = document.querySelector(`.step-rail a[href="#${id}"]`);
-        if (active) active.classList.add("is-active");
-      };
-
-      // Start aktiv
-      setActive("top");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          // Wähle die Section mit der höchsten Sichtbarkeit
-          const best = entries
-            .filter((e) => e.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-          if (best && best.target && best.target.id) setActive(best.target.id);
-        },
-        { threshold: [0.25, 0.45, 0.65] },
-      );
-
-      stepTargets.forEach((s) => observer.observe(s));
-
-      // ===== SCROLL LOCK (User-Scroll komplett sperren) =====
-      window.__ALLOW_NAV_SCROLL__ = false;
-
-      const preventIfNotAllowed = (e) => {
-        if (!window.__ALLOW_NAV_SCROLL__) e.preventDefault();
-      };
-
-      // Maus/Trackpad
-      window.addEventListener("wheel", preventIfNotAllowed, { passive: false });
-
-      // Touch (Mobile)
-      window.addEventListener("touchmove", preventIfNotAllowed, {
-        passive: false,
-      });
-
-      // Tastatur scroll keys sperren
-      window.addEventListener("keydown", (e) => {
-        if (window.__ALLOW_NAV_SCROLL__) return;
-
-        const keys = [
-          "ArrowUp",
-          "ArrowDown",
-          "PageUp",
-          "PageDown",
-          "Home",
-          "End",
-          " ",
-        ];
-        if (keys.includes(e.key)) e.preventDefault();
-      });
-
-      // Falls jemand dennoch scrollt (z.B. Browser quirks) => zurück "snappen"
-      let lastAllowedY = window.scrollY;
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (window.__ALLOW_NAV_SCROLL__) {
-            lastAllowedY = window.scrollY;
-            return;
-          }
-          // zurück auf den letzten erlaubten Scrollstand
-          if (window.scrollY !== lastAllowedY) window.scrollTo(0, lastAllowedY);
-        },
-        { passive: true },
-      );
-
-      // Wenn Seite mit Hash geladen wurde, dahin navigieren (aber ohne User-Scroll)
-      window.addEventListener("load", () => {
-        if (location.hash) {
-          const t = document.querySelector(location.hash);
-          if (t) runNav(t);
-        }
       });
     </script>
   </body>
