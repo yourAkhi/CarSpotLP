@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Datenschutzerklärung - CarSpot</title>
   <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cookie-banner.css" />
 </head>
 <body>
   <div class="container">
@@ -83,7 +84,24 @@
         Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
       </p>
 
-      <h2>4. Kontaktaufnahme</h2>
+      <h2>4. Cookies und lokale Speicherungen</h2>
+      <p>
+        Auf dieser Website werden derzeit keine Analyse- oder Marketing-Cookies eingesetzt.
+        Es werden ausschließlich technisch notwendige Speicherungen verwendet, soweit dies
+        erforderlich ist, um grundlegende Funktionen der Website bereitzustellen.
+      </p>
+      <p>
+        Dazu kann insbesondere ein Eintrag im Local Storage deines Browsers gehören,
+        mit dem gespeichert wird, dass du den Cookie-Hinweis bereits gesehen und bestätigt hast.
+        Diese Speicherung dient ausschließlich dazu, dir den Hinweis nicht bei jedem Seitenaufruf
+        erneut anzuzeigen.
+      </p>
+      <p>
+        Sollten zukünftig Analyse- oder Marketingdienste auf der Landingpage eingesetzt werden,
+        wird diese Datenschutzerklärung entsprechend aktualisiert.
+      </p>
+
+      <h2>5. Kontaktaufnahme</h2>
       <p>
         Wenn du per E-Mail Kontakt aufnimmst, werden die von dir übermittelten Daten
         zur Bearbeitung deiner Anfrage verarbeitet.
@@ -100,7 +118,7 @@
         Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
       </p>
 
-      <h2>5. Externe Links</h2>
+      <h2>6. Externe Links</h2>
       <p>
         Diese Website enthält Links zu externen Plattformen, insbesondere zu Instagram.
         Erst beim Anklicken des jeweiligen Links werden Daten an den entsprechenden
@@ -108,13 +126,13 @@
         ausschließlich die jeweiligen Betreiber verantwortlich.
       </p>
 
-      <h2>6. Speicherdauer</h2>
+      <h2>7. Speicherdauer</h2>
       <p>
         Personenbezogene Daten werden nur so lange gespeichert, wie dies für den
         jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
       </p>
 
-      <h2>7. Deine Rechte</h2>
+      <h2>8. Deine Rechte</h2>
       <p>Du hast im Rahmen der gesetzlichen Vorgaben insbesondere folgende Rechte:</p>
       <ul>
         <li>Recht auf Auskunft</li>
@@ -126,12 +144,12 @@
         <li>Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</li>
       </ul>
 
-      <h2>8. Sicherheit</h2>
+      <h2>9. Sicherheit</h2>
       <p>
         Diese Website nutzt eine SSL-/TLS-Verschlüsselung, um übertragene Inhalte zu schützen.
       </p>
 
-      <h2>9. Änderungen dieser Datenschutzerklärung</h2>
+      <h2>10. Änderungen dieser Datenschutzerklärung</h2>
       <p>
         Ich behalte mir vor, diese Datenschutzerklärung anzupassen, wenn dies aufgrund
         technischer, rechtlicher oder inhaltlicher Änderungen erforderlich wird.
@@ -143,7 +161,8 @@
       <div>
         <a href="impressum.html">Impressum</a> ·
         <a href="datenschutz.html">Datenschutz</a> ·
-        <a href="app-datenschutz.html">App-Datenschutz</a>
+        <a href="app-datenschutz.html">App-Datenschutz</a> ·
+        <button type="button" class="footer-cookie-link" data-open-cookie-banner>Cookie-Hinweis</button>
       </div>
     </footer>
   </div>
@@ -151,5 +170,25 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-</body>
+
+    <div id="cookie-banner" class="cookie-banner" hidden aria-hidden="true">
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          <strong>Hinweis zu Cookies:</strong> Auf dieser Website werden aktuell
+          nur technisch notwendige Speicherungen verwendet, damit grundlegende
+          Funktionen der Website zuverlässig bereitgestellt werden und der Hinweis
+          nicht bei jedem Besuch erneut erscheint. Analyse- oder Marketing-Cookies
+          setzen wir derzeit nicht ein. Weitere Informationen findest du in unserer
+          <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+        <div class="cookie-banner__actions">
+          <button id="cookie-accept" class="cookie-banner__button" type="button">
+            Verstanden
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="cookie-banner.js"></script>
+
+  </body>
 </html>
