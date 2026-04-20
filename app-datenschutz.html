@@ -1,104 +1,174 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Datenschutz App</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App-Datenschutzerklärung - CarSpot</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo logo--xl" aria-label="Zur Startseite">
+        <div class="logo-badge">
+          <img
+            src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
+            alt="CarSpot Logo"
+            class="logo-icon"
+          />
+        </div>
+        <span>CarSpot</span>
+      </a>
+    </header>
 
-<h1>Datenschutzerklärung (App / PWA – CarSpot)</h1>
+    <main class="section legal-page">
+      <h1>Datenschutzerklärung (App / PWA)</h1>
 
-<h2>1. Allgemeine Hinweise</h2>
-<p>
-Diese Datenschutzerklärung gilt für die Nutzung der CarSpot App.
-</p>
+      <p>
+        Diese Datenschutzerklärung gilt für die Nutzung der CarSpot App als Progressive Web App (PWA).
+      </p>
 
-<p><strong>Verantwortlicher:</strong><br>
-Murat Uzundag<br>
-Mülhauser Straße 10<br>
-81379 München<br>
-Deutschland<br>
-E-Mail: info@carspot.gg
-</p>
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Murat Uzundag<br />
+        Mülhauser Straße 10<br />
+        81379 München<br />
+        Deutschland<br />
+        E-Mail: <a href="mailto:info@carspot.gg">info@carspot.gg</a>
+      </p>
 
-<h2>2. Verarbeitete Daten</h2>
+      <h2>2. Registrierung und Benutzerkonto</h2>
+      <p>
+        Für bestimmte Funktionen der App ist eine Registrierung mit E-Mail-Adresse und Passwort erforderlich.
+      </p>
+      <p>
+        Dabei werden insbesondere folgende Daten verarbeitet:
+      </p>
+      <ul>
+        <li>E-Mail-Adresse</li>
+        <li>verschlüsselt gespeichertes Passwort</li>
+        <li>technische Login- und Zugriffsdaten</li>
+      </ul>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
+      </p>
 
-<h3>Registrierungsdaten</h3>
-<ul>
-<li>E-Mail-Adresse</li>
-<li>Passwort (verschlüsselt)</li>
-</ul>
+      <h2>3. Nutzung von Supabase</h2>
+      <p>
+        Für Authentifizierung, Datenbankfunktionen und Dateispeicherung wird Supabase
+        genutzt. Die eingesetzte Region ist eu-central-1.
+      </p>
+      <p>
+        Dabei können insbesondere folgende Daten verarbeitet werden:
+      </p>
+      <ul>
+        <li>Benutzerkontodaten</li>
+        <li>Authentifizierungsdaten</li>
+        <li>Spots</li>
+        <li>Kommentare</li>
+        <li>Bewertungen</li>
+        <li>Favoriten</li>
+        <li>hochgeladene Bilder</li>
+        <li>Standortangaben</li>
+      </ul>
 
-<h3>Nutzungsdaten</h3>
-<ul>
-<li>Spots</li>
-<li>Favoriten</li>
-<li>Kommentare</li>
-<li>Bewertungen</li>
-</ul>
+      <h2>4. Standortdaten</h2>
+      <p>
+        Die App verwendet Standortdaten, um Spots in deiner Umgebung anzuzeigen und
+        das Erstellen neuer Inhalte zu ermöglichen.
+      </p>
+      <p>
+        Standortdaten werden entweder:
+      </p>
+      <ul>
+        <li>manuell von dir eingegeben oder</li>
+        <li>nach deiner Freigabe über die GPS-Funktion deines Geräts verwendet.</li>
+      </ul>
+      <p>
+        Die Verarbeitung erfolgt nur, soweit du die entsprechenden Funktionen nutzt
+        oder freigibst.
+      </p>
 
-<h3>Inhaltsdaten</h3>
-<ul>
-<li>Bilder</li>
-<li>Beschreibungen</li>
-<li>Standortdaten</li>
-</ul>
+      <h2>5. Öffentliche Inhalte</h2>
+      <p>
+        Von Nutzern erstellte Inhalte wie Spots, Bilder, Kommentare und Bewertungen
+        können innerhalb der App für andere Nutzer sichtbar sein.
+      </p>
+      <p>
+        Bitte veröffentliche keine personenbezogenen Daten Dritter oder Inhalte, für
+        deren Veröffentlichung du keine Berechtigung hast.
+      </p>
 
-<h2>3. Standortdaten</h2>
-<p>
-Standortdaten werden zur Anzeige und Erstellung von Inhalten genutzt.
-Die Nutzung erfolgt nur mit Zustimmung des Nutzers.
-</p>
+      <h2>6. Hosting über Vercel</h2>
+      <p>
+        Die technische Bereitstellung der App erfolgt über Vercel in der Region
+        eu-central-1 (fra1).
+      </p>
+      <p>
+        Dabei können technisch erforderliche Zugriffsdaten verarbeitet werden, insbesondere:
+      </p>
+      <ul>
+        <li>IP-Adresse</li>
+        <li>Browserdaten</li>
+        <li>Zeitstempel</li>
+        <li>technische Verbindungsdaten</li>
+      </ul>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+      </p>
 
-<h2>4. Supabase (Backend)</h2>
-<p>
-Die App nutzt Supabase als Backend-Dienst (Region: eu-central-1).
-</p>
+      <h2>7. Speicherdauer</h2>
+      <p>
+        Personenbezogene Daten werden grundsätzlich so lange gespeichert, wie dein
+        Benutzerkonto besteht oder die Daten für die jeweilige Funktion benötigt werden.
+      </p>
 
-<p>
-Dabei werden verarbeitet:
-</p>
-<ul>
-<li>Benutzerkontodaten</li>
-<li>Authentifizierungsdaten</li>
-<li>Inhalte der Nutzer</li>
-</ul>
+      <h2>8. Löschung</h2>
+      <p>
+        Nutzer können die Löschung ihres Kontos oder eigener Inhalte im Rahmen der
+        verfügbaren Funktionen anfragen oder veranlassen.
+      </p>
+      <p>
+        Nach Löschung werden Daten innerhalb eines angemessenen Zeitraums entfernt,
+        soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+      </p>
 
-<p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO</p>
+      <h2>9. Deine Rechte</h2>
+      <p>Du hast im Rahmen der gesetzlichen Vorgaben insbesondere folgende Rechte:</p>
+      <ul>
+        <li>Recht auf Auskunft</li>
+        <li>Recht auf Berichtigung</li>
+        <li>Recht auf Löschung</li>
+        <li>Recht auf Einschränkung der Verarbeitung</li>
+        <li>Recht auf Datenübertragbarkeit</li>
+        <li>Recht auf Widerspruch</li>
+        <li>Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</li>
+      </ul>
 
-<h2>5. Hosting (Vercel)</h2>
-<p>
-Die App wird über Vercel bereitgestellt (Region: eu-central-1 / fra1).
-</p>
+      <h2>10. Sicherheit</h2>
+      <p>
+        Die Datenübertragung zwischen deinem Gerät und der App erfolgt verschlüsselt über HTTPS.
+      </p>
 
-<h2>6. Öffentliche Inhalte</h2>
-<p>
-Von Nutzern erstellte Inhalte sind öffentlich sichtbar.
-</p>
+      <h2>11. Änderungen dieser Datenschutzerklärung</h2>
+      <p>
+        Ich behalte mir vor, diese Datenschutzerklärung anzupassen, wenn dies aufgrund
+        technischer, rechtlicher oder inhaltlicher Änderungen erforderlich wird.
+      </p>
+    </main>
 
-<h2>7. Speicherdauer</h2>
-<p>
-Daten werden gespeichert, solange ein Benutzerkonto besteht oder bis zur Löschung.
-</p>
+    <footer>
+      <div>© <span id="y"></span> CarSpot</div>
+      <div>
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a> ·
+        <a href="app-datenschutz.html">App-Datenschutz</a>
+      </div>
+    </footer>
+  </div>
 
-<h2>8. Löschung</h2>
-<p>
-Nutzer können ihr Konto und Inhalte jederzeit löschen.
-</p>
-
-<h2>9. Rechte</h2>
-<ul>
-<li>Auskunft</li>
-<li>Löschung</li>
-<li>Berichtigung</li>
-<li>Datenübertragbarkeit</li>
-</ul>
-
-<h2>10. Sicherheit</h2>
-<p>
-Die Datenübertragung erfolgt verschlüsselt (HTTPS).
-</p>
-
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
