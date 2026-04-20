@@ -431,22 +431,31 @@ body::before {
   }
 }
 
+/* Footer wie auf index.html */
 
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 28px 0 10px;
+footer {
+  margin-top: 24px;
+  padding: 24px 0 8px;
   color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.site-footer a {
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+footer a {
   color: inherit;
 }
 
-.site-footer a:hover,
-.site-footer a:focus-visible {
+footer a:hover,
+footer a:focus-visible {
   color: var(--text);
 }
