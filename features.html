@@ -2,29 +2,41 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <title>CarSpot – Kurzanleitung & Features</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>CarSpot – Alle Features im Überblick</title>
     <meta
       name="description"
-      content="Entdecke die wichtigsten CarSpot Funktionen: Spots finden, Favoriten speichern, eigene Spots hinzufügen und mit der Community interagieren."
+      content="CarSpot kompakt erklärt: Spots entdecken, nach Kategorien filtern, eigene Orte hinzufügen, Favoriten speichern, bewerten, kommentieren und Treffen planen."
     />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="color-scheme" content="dark" />
+
     <link rel="stylesheet" href="features.css" />
     <link rel="stylesheet" href="cookie-banner.css" />
   </head>
 
   <body>
-    <div class="page-shell">
-      <header class="topbar">
+    <div class="container">
+      <header>
         <a
-          class="brand"
+          class="logo logo--xl"
           href="index.html"
-          aria-label="Zur Startseite von CarSpot"
+          aria-label="Zur CarSpot Startseite"
         >
-          <span class="brand-badge">
+          <span class="logo-badge">
             <img
               src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
               alt="CarSpot Logo"
-              class="brand-logo"
+              class="logo-icon"
             />
           </span>
           <span>CarSpot</span>
@@ -32,166 +44,203 @@
       </header>
 
       <main>
-        <section class="hero" id="top">
+        <section class="hero feature-hero" id="top">
           <div class="hero-copy">
-            <h1>Die wichtigsten CarSpot Features auf einen Blick</h1>
+            <span class="eyebrow">CarSpot im Überblick</span>
+            <h1>Alles für den perfekten Car Spot – in einer App.</h1>
             <p>
-              Mit CarSpot findest du coole Spots in deiner Umgebung, speicherst
-              deine Favoriten, bewertest Orte und teilst eigene Entdeckungen
-              direkt mit der Community.
+              Entdecke neue Orte, filtere die Karte nach deinen Interessen und
+              teile eigene Spots mit der Community. Schnell, übersichtlich und
+              direkt für unterwegs gemacht.
             </p>
 
-            <ul
-              class="hero-points"
-              aria-label="Schnellüberblick der wichtigsten Funktionen"
-            >
-              <li>Spots auf der Karte entdecken</li>
-              <li>Favoriten speichern und teilen</li>
-              <li>Eigene Spots mit Bildern hinzufügen</li>
-              <li>Kommentare und Bewertungen nutzen</li>
-            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#features">
+                Features ansehen
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h13M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn btn-secondary" href="index.html">Zur Startseite</a>
+            </div>
           </div>
+
+          <aside class="hero-summary" aria-label="CarSpot Schnellüberblick">
+            <span class="summary-label">Schnellüberblick</span>
+            <div class="summary-row">
+              <span class="summary-icon" aria-hidden="true">01</span>
+              <div>
+                <strong>Spot finden</strong>
+                <small>Karte öffnen und passend filtern</small>
+              </div>
+            </div>
+            <div class="summary-row">
+              <span class="summary-icon" aria-hidden="true">02</span>
+              <div>
+                <strong>Details prüfen</strong>
+                <small>Bilder, Eigenschaften und Bewertungen ansehen</small>
+              </div>
+            </div>
+            <div class="summary-row">
+              <span class="summary-icon" aria-hidden="true">03</span>
+              <div>
+                <strong>Losfahren oder teilen</strong>
+                <small>Navigieren, favorisieren oder eigenen Spot anlegen</small>
+              </div>
+            </div>
+          </aside>
         </section>
 
-        <section class="feature-section" id="karte">
+        <section class="feature-overview" id="features">
           <div class="section-head">
-            <span class="section-kicker">01 · Entdecken</span>
-            <h2>Spots auf der Karte finden</h2>
+            <span class="eyebrow">Die wichtigsten Funktionen</span>
+            <h2>In wenigen Sekunden verstanden</h2>
             <p>
-              CarSpot zeigt dir coole Spots in deiner Umgebung, finde schnell
-              neue Ziele und lasse dich direkt dorthin navigieren.
+              Alles Wesentliche auf einen Blick – ohne lange Anleitung.
             </p>
           </div>
 
           <div class="feature-grid">
+            <article class="feature-card feature-card--accent">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 6h16M7 12h10M10 18h4" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Entdecken</span>
+                <h3>Kategorien & Kartenfilter</h3>
+                <p>
+                  Filtere mehrere Kategorien gleichzeitig und finde genau die
+                  Spots, die zu deiner nächsten Tour passen.
+                </p>
+                <div class="category-chips" aria-label="Spot-Kategorien">
+                  <span>Urban</span>
+                  <span>Natur</span>
+                  <span>Parken</span>
+                  <span>Straßen</span>
+                  <span>Infrastruktur</span>
+                </div>
+              </div>
+            </article>
+
             <article class="feature-card">
-              <h3>Was du machen kannst</h3>
-              <ul class="check-list">
-                <li>Spots in deiner Nähe auf der Karte entdecken</li>
-                <li>Spots antippen und sofort die wichtigsten Infos sehen</li>
-                <li>Direkt zur Navigation in deine Karten-App wechseln</li>
-              </ul>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s7-5.1 7-12a7 7 0 1 0-14 0c0 6.9 7 12 7 12Z" />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Informieren</span>
+                <h3>Spot-Details & Navigation</h3>
+                <p>
+                  Sieh Galerie, Kategorie, Kosten und Eignung für tiefe Autos –
+                  anschließend direkt mit Apple oder Google Maps navigieren.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 5v14M5 12h14" />
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Beitragen</span>
+                <h3>Eigene Spots hinzufügen</h3>
+                <p>
+                  Name, Beschreibung, Kategorie und Standort festlegen, bis zu
+                  fünf Bilder hochladen und ein Hauptbild auswählen.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 20.5 4.8 13.7A5 5 0 0 1 12 6.8a5 5 0 0 1 7.2 6.9L12 20.5Z" />
+                  <path d="M16.5 4.5h4v4M20.5 4.5l-5 5" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Merken</span>
+                <h3>Favoriten & Teilen</h3>
+                <p>
+                  Speichere deine Highlights zentral und teile interessante
+                  Spots direkt mit Freunden.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Community</span>
+                <h3>Bewerten & kommentieren</h3>
+                <p>
+                  Vergib ein bis fünf Sterne, teile Hinweise in den Kommentaren
+                  und melde unpassende Inhalte bei Bedarf.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="8" cy="8" r="3" />
+                  <circle cx="17" cy="9" r="2.5" />
+                  <path d="M3 20c.4-4.1 2.1-6 5-6s4.6 1.9 5 6M13.5 15.2c1-.8 2.1-1.2 3.5-1.2 2.5 0 3.8 1.6 4 5" />
+                </svg>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-kicker">Zusammen fahren</span>
+                <h3>Hotspots & RideOuts</h3>
+                <p>
+                  Entdecke spontane Treffpunkte, erstelle eigene Hotspots und
+                  plane gemeinsame Ausfahrten mit anderen Autofans.
+                </p>
+              </div>
             </article>
           </div>
-        </section>
 
-        <section class="feature-section" id="favoriten">
-          <div class="section-head">
-            <span class="section-kicker">02 · Speichern</span>
-            <h2>Favoriten sichern und schneller wiederfinden</h2>
-            <p>
-              Besonders gute Spots musst du dir nicht merken – speichere sie
-              einfach in deinen Favoriten.
-            </p>
-          </div>
-
-          <div class="feature-grid three-up">
-            <article class="feature-card">
-              <h3>Favorit setzen</h3>
+          <div class="management-strip">
+            <div class="management-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 7h16M7 4v6M17 4v6M6 13h5M6 17h8" />
+                <rect x="3" y="4" width="18" height="17" rx="4" />
+              </svg>
+            </div>
+            <div>
+              <span class="feature-kicker">Deine Inhalte</span>
+              <h3>Eigene Spots jederzeit im Griff</h3>
               <p>
-                Markiere interessante Spots direkt in der App und sammle deine
-                persönlichen Highlights zentral an einem Ort.
+                Öffne <strong>Meine Spots</strong>, passe Grunddaten,
+                Kategorie, Eigenschaften oder Bilder an und lösche Einträge bei
+                Bedarf.
               </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Eigene Übersicht</h3>
-              <p>
-                Im Bereich <strong>Meine Favoriten</strong> findest du alle
-                gespeicherten Orte kompakt wieder.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Mit Freunden teilen</h3>
-              <p>
-                Favoriten kannst du mit Freunden teilen – so findet jeder
-                schnell die besten Spots.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="feature-section" id="spots">
-          <div class="section-head">
-            <span class="section-kicker">03 · Teilen</span>
-            <h2>Eigene Spots erstellen und verwalten</h2>
-            <p>
-              Hast du selbst einen starken Spot entdeckt, kannst du ihn direkt
-              in CarSpot anlegen und der Community zur Verfügung stellen.
-            </p>
-          </div>
-
-          <div class="feature-grid two-up">
-            <article class="feature-card tall-card">
-              <h3>So erstellst du einen Spot</h3>
-              <ol class="step-list">
-                <li>Öffne den Assistent zum Spot anlegen</li>
-                <li>Name, Straße und Beschreibung eintragen</li>
-                <li>Standort auf der Karte festlegen</li>
-                <li>Bilder hochladen und Hauptbild auswählen</li>
-                <li>Spot speichern und veröffentlichen</li>
-              </ol>
-            </article>
-
-            <article class="feature-card tall-card">
-              <h3>Danach hast du alles im Griff</h3>
-              <ul class="check-list">
-                <li>
-                  Deine eigenen Spots in <strong>Meine Spots</strong> ansehen
-                </li>
-                <li>Bilder verwalten</li>
-                <li>Bewertungen und Kommentare verfolgen</li>
-                <li>Spots bei Bedarf anpassen oder erneut aufrufen</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="feature-section" id="community">
-          <div class="section-head">
-            <span class="section-kicker">04 · Community</span>
-            <h2>Bewerten und kommentieren</h2>
-            <p>
-              Nutzer können Spots bewerten, kommentieren und ihre Erfahrungen
-              direkt mit anderen teilen.
-            </p>
-          </div>
-
-          <div class="feature-grid three-up">
-            <article class="feature-card">
-              <h3>Bewertungen</h3>
-              <p>
-                Gib Spots Sterne und hilf anderen dabei, besonders gute Orte
-                schneller zu erkennen.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>Kommentare</h3>
-              <p>
-                Teile deine Eindrücke, Tipps oder Hinweise direkt unter einem
-                Spot mit der Community.
-              </p>
-            </article>
+            </div>
           </div>
         </section>
 
         <section class="cta-section">
           <div class="cta-card">
-            <span class="eyebrow">Bereit für CarSpot?</span>
-            <h2>CarSpot lebt von der Community</h2>
-            <p>
-              Entdecke neue Orte, teile deine eigenen Favoriten mit anderen
-              Autofans und hilf dabei, die Karte mit jeder neuen Empfehlung noch
-              wertvoller zu machen.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="index.html#home"
-                >Zur Startseite</a
-              >
-              <a class="btn btn-secondary" href="index.html#kontakt">Kontakt</a>
+            <div>
+              <span class="eyebrow">Bereit für den nächsten Spot?</span>
+              <h2>Entdecken, speichern und gemeinsam mehr erleben.</h2>
             </div>
+            <a class="btn btn-primary" href="index.html#home">
+              Zur CarSpot Startseite
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6" />
+              </svg>
+            </a>
           </div>
         </section>
       </main>
@@ -229,22 +278,6 @@
       </footer>
     </div>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", (e) => {
-          const href = a.getAttribute("href");
-          const target = document.querySelector(href);
-          if (!target) return;
-
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-          history.replaceState(null, "", href);
-        });
-      });
-    </script>
-
     <div id="cookie-banner" class="cookie-banner" hidden aria-hidden="true">
       <div class="cookie-banner__inner">
         <p class="cookie-banner__text">
@@ -252,8 +285,8 @@
           nur technisch notwendige Speicherungen verwendet, damit grundlegende
           Funktionen der Website zuverlässig bereitgestellt werden und der
           Hinweis nicht bei jedem Besuch erneut erscheint. Analyse- oder
-          Marketing-Cookies werden derzeit nicht verwendet. Weitere Informationen
-          findest du in unserer
+          Marketing-Cookies werden derzeit nicht verwendet. Weitere
+          Informationen findest du in unserer
           <a href="datenschutz.html">Datenschutzerklärung</a>.
         </p>
         <div class="cookie-banner__actions">
@@ -267,6 +300,10 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
     <script src="scroll-gradient.js"></script>
     <script src="cookie-banner.js"></script>
   </body>
