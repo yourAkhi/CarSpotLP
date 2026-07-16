@@ -95,74 +95,64 @@
               />
             </div>
 
-            <div class="store-download-area">
-              <div class="badges" aria-label="CarSpot in den App Stores">
-                <a
-                  class="store-badge disabled"
-                  aria-disabled="true"
-                  tabindex="-1"
-                  role="link"
-                  title="Bald im App Store verfügbar"
-                >
-                  <img
-                    src="assets/store-badges/app-store-de.svg"
-                    alt="Laden im App Store"
-                    width="180"
-                    height="54"
-                  />
-                </a>
-                <a
-                  class="store-badge disabled"
-                  aria-disabled="true"
-                  tabindex="-1"
-                  role="link"
-                  title="Bald bei Google Play verfügbar"
-                >
-                  <img
-                    src="assets/store-badges/google-play-de.svg"
-                    alt="Jetzt bei Google Play"
-                    width="180"
-                    height="54"
-                  />
-                </a>
-              </div>
+            <div class="badges" aria-label="CarSpot in den App Stores">
+              <a
+                class="store-badge disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                role="link"
+                title="Bald im App Store verfügbar"
+              >
+                <img
+                  src="assets/store-badges/app-store-de.svg"
+                  alt="Laden im App Store"
+                  width="180"
+                  height="54"
+                />
+              </a>
+              <a
+                class="store-badge disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                role="link"
+                title="Bald bei Google Play verfügbar"
+              >
+                <img
+                  src="assets/store-badges/google-play-de.svg"
+                  alt="Jetzt bei Google Play"
+                  width="180"
+                  height="54"
+                />
+              </a>
+            </div>
 
-              <div class="download-hint" aria-hidden="true">
-                <svg
-                  viewBox="0 0 360 165"
-                  role="presentation"
-                  focusable="false"
-                >
-                  <defs>
-                    <path
-                      id="download-text-curve"
-                      d="M78 137 C132 165 228 165 282 137"
-                    />
-                  </defs>
-
+            <div class="store-download-hint" aria-hidden="true">
+              <svg viewBox="0 0 320 165" role="img" aria-label="Download here">
+                <defs>
                   <path
-                    class="download-hint-arrow"
-                    d="M294 126
-                       C324 94 314 42 268 24
-                       C221 6 158 20 142 62
-                       C132 88 150 108 180 111"
+                    id="downloadHintTextCurve"
+                    d="M92 146 C128 160, 192 160, 228 146"
                   />
-                  <path
-                    class="download-hint-arrow"
-                    d="M164 96 L181 112 L164 127"
-                  />
+                </defs>
 
-                  <text class="download-hint-text">
-                    <textPath
-                      href="#download-text-curve"
-                      startOffset="50%"
-                      text-anchor="middle"
-                    >
-                      download here :)
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
+                <path
+                  class="store-download-arrow"
+                  d="M246 106
+                     C250 78, 242 54, 220 36
+                     C202 22, 181 16, 164 22
+                     C150 28, 147 38, 160 52"
+                />
+                <path
+                  class="store-download-arrow"
+                  d="M147 57 L160 44 L172 58"
+                />
+
+                <text class="store-download-text">
+                  <textPath href="#downloadHintTextCurve" startOffset="50%" text-anchor="middle">
+                    download here :)
+                  </textPath>
+                </text>
+              </svg>
             </div>
           </div>
         </section>

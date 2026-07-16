@@ -368,10 +368,6 @@ header {
 }
 
 /* Store-Badges */
-.store-download-area {
-  width: min(100%, 372px);
-}
-
 .badges {
   display: flex;
   align-items: center;
@@ -406,62 +402,41 @@ header {
   opacity: 0.88;
 }
 
-.download-hint {
-  width: min(100%, 300px);
-  margin: 2px auto -8px;
-  color: rgba(255, 255, 255, 0.96);
-  pointer-events: none;
-  transform: rotate(-2deg);
+.store-badges-note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: 0.02em;
 }
 
-.download-hint svg {
+
+.store-download-hint {
+  width: min(320px, 72vw);
+  margin: 10px auto 0;
+  color: #fff;
+  pointer-events: none;
+}
+
+.store-download-hint svg {
   display: block;
   width: 100%;
   height: auto;
   overflow: visible;
 }
 
-.download-hint-arrow {
+.store-download-arrow {
   fill: none;
   stroke: currentColor;
-  stroke-width: 7;
+  stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-.download-hint-text {
+.store-download-text {
   fill: currentColor;
-  font-family: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-@media (max-width: 460px) {
-  .store-download-area {
-    width: 100%;
-  }
-
-  .download-hint {
-    width: min(78vw, 250px);
-    margin-top: 0;
-    margin-bottom: -4px;
-  }
-
-  .download-hint-arrow {
-    stroke-width: 6.5;
-  }
-
-  .download-hint-text {
-    font-size: 20px;
-  }
-}
-
-.store-badges-note {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  font-size: 21px;
+  font-weight: 600;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
 }
 
 /* Sections */
@@ -554,6 +529,19 @@ footer {
 
   .store-badge {
     flex-basis: 160px;
+  }
+
+  .store-download-hint {
+    width: min(250px, 64vw);
+    margin-top: 8px;
+  }
+
+  .store-download-text {
+    font-size: 18px;
+  }
+
+  .store-download-arrow {
+    stroke-width: 7;
   }
 
   :root {
