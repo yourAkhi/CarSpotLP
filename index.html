@@ -61,18 +61,27 @@
             <h1>Finde Spots easy – mit CarSpot!😎📱</h1>
             <br />
             <p>
-              Entdecke coole Spots in deiner Umgebung, bewerte sie und teile
-              deine Meinung mit der Community. Hast du selbst einen
-              Lieblingsspot? Dann füge diesen ganz einfach in der App hinzu,
-              damit alle davon profitieren. Spots die dir am besten gefallen
-              kannst du außerdem favorisieren und direkt mit Freunden teilen.
+              <span class="hero-intro">
+                Entdecke coole Spots in deiner Umgebung, bewerte sie und teile
+                deine Meinung mit der Community.
+              </span>
+              <span class="hero-secondary">
+                Hast du selbst einen Lieblingsspot? Dann füge diesen ganz einfach
+                in der App hinzu, damit alle davon profitieren.
+              </span>
+              Spots die dir am besten gefallen kannst du außerdem favorisieren
+              und direkt mit Freunden teilen.
               <br />
               <br />
               <a class="feature-jump" href="https://carspot.gg/features.html">
-                <span class="feature-jump-icon">→</span>
                 <span class="feature-jump-copy">
+                  <small>CarSpot entdecken</small>
                   <strong>Alle Features im Detail</strong>
-                  <small>Hier geht's zur Feature-Übersicht</small>
+                </span>
+                <span class="feature-jump-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M5 12h13M13 6l6 6-6 6" />
+                  </svg>
                 </span>
               </a>
             </p>
@@ -87,24 +96,37 @@
               />
             </div>
 
-            <div class="badges" aria-label="Download Badges (Platzhalter)">
+            <div class="badges" aria-label="CarSpot in den App Stores">
               <a
                 class="store-badge disabled"
                 aria-disabled="true"
                 tabindex="-1"
                 role="link"
+                title="Bald im App Store verfügbar"
               >
-                 App&nbsp;Store (bald)
+                <img
+                  src="assets/store-badges/app-store-de.svg"
+                  alt="Laden im App Store – bald verfügbar"
+                  width="180"
+                  height="54"
+                />
               </a>
               <a
                 class="store-badge disabled"
                 aria-disabled="true"
                 tabindex="-1"
                 role="link"
+                title="Bald bei Google Play verfügbar"
               >
-                ▶︎ Google&nbsp;Play (bald)
+                <img
+                  src="assets/store-badges/google-play-de.svg"
+                  alt="Jetzt bei Google Play – bald verfügbar"
+                  width="180"
+                  height="54"
+                />
               </a>
             </div>
+            <p class="store-badges-note">Demnächst verfügbar</p>
           </div>
         </section>
 
@@ -206,6 +228,7 @@
         </div>
       </div>
     </div>
+    <script src="scroll-gradient.js"></script>
     <script src="cookie-banner.js"></script>
   </body>
 </html>

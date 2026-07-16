@@ -10,6 +10,8 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --maxw: 1120px;
   --radius: 20px;
+  --scroll-lightness: 0.012;
+  --gradient-shift: 0px;
   color-scheme: dark;
 }
 
@@ -28,6 +30,8 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
+  position: relative;
+  isolation: isolate;
 }
 
 a {
@@ -35,16 +39,31 @@ a {
   text-decoration: none;
 }
 
-body::before {
+body::before,
+body::after {
   content: "";
   position: fixed;
+  pointer-events: none;
+}
+
+body::before {
+  inset: -36px;
+  z-index: -2;
+  background:
+    radial-gradient(1100px 620px at 82% -8%, rgba(130, 255, 210, 0.17), transparent 62%),
+    radial-gradient(900px 560px at 8% 12%, rgba(106, 166, 255, 0.18), transparent 64%),
+    radial-gradient(720px 520px at 72% 78%, rgba(106, 166, 255, 0.08), transparent 68%),
+    linear-gradient(180deg, #0b0f1a 0%, #0d1320 50%, #111827 100%);
+  transform: translate3d(0, var(--gradient-shift), 0) scale(1.025);
+  will-change: transform;
+}
+
+body::after {
   inset: 0;
   z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(130, 255, 210, 0.15), transparent 60%),
-    radial-gradient(900px 500px at 10% 10%, rgba(106, 166, 255, 0.15), transparent 60%),
-    var(--bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.9));
+  opacity: var(--scroll-lightness);
+  will-change: opacity;
 }
 
 .page-shell {
@@ -458,4 +477,10 @@ footer a {
 footer a:hover,
 footer a:focus-visible {
   color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    transform: scale(1.025);
+  }
 }
