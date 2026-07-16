@@ -1,0 +1,127 @@
+/*
+ * Gemeinsame Layout-Shell für Start- und Feature-Seite.
+ * Diese Datei wird auf beiden Seiten zuletzt geladen und verhindert,
+ * dass Header, Logo, Seitenränder oder Hero beim Wechsel verspringen.
+ */
+
+:root {
+  --site-max-width: 1120px;
+  --site-inline-padding: 24px;
+  --site-hero-padding: 40px;
+  --site-logo-size: 84px;
+  --site-logo-text-size: 36px;
+  --site-logo-gap: 16px;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: calc(24px + var(--safe-top));
+  padding-right: var(--site-inline-padding);
+  padding-bottom: calc(24px + var(--safe-bottom));
+  padding-left: var(--site-inline-padding);
+}
+
+@supports (height: 100dvh) {
+  .container {
+    height: 100dvh;
+  }
+}
+
+@supports (height: 100svh) {
+  .container {
+    height: 100svh;
+  }
+}
+
+header {
+  width: 100%;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo,
+a.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-logo-gap);
+  flex: 0 0 auto;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo--xl {
+  --logo-size: var(--site-logo-size);
+  --brand-name-size: var(--site-logo-text-size);
+  --logo-gap: var(--site-logo-gap);
+}
+
+.logo-badge {
+  width: var(--site-logo-size);
+  height: var(--site-logo-size);
+  flex: 0 0 var(--site-logo-size);
+  border-radius: calc(var(--site-logo-size) / 3);
+}
+
+.logo-badge .logo-icon {
+  width: calc(var(--site-logo-size) * 0.8);
+  height: calc(var(--site-logo-size) * 0.8);
+}
+
+.logo > span:last-child,
+a.logo > span:last-child {
+  font-size: var(--site-logo-text-size);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.container > main > .hero {
+  padding-top: var(--site-hero-padding);
+  padding-bottom: var(--site-hero-padding);
+}
+
+.container > main > .hero .hero-copy {
+  min-width: 0;
+  max-width: 680px;
+}
+
+.container > main > .hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-shadow: #081019 0 4px 8px;
+}
+
+.container > main > .hero .hero-copy > p {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.65;
+}
+
+@media (max-width: 920px) {
+  .container > main > .hero {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --site-logo-size: 68px;
+    --site-logo-text-size: 30px;
+    --site-logo-gap: 14px;
+  }
+}
