@@ -127,42 +127,30 @@
             </div>
 
             <div class="store-download-hint" aria-hidden="true">
-              <svg viewBox="0 0 320 165" role="img" aria-label="Download here">
+              <svg viewBox="0 0 220 180" role="img" aria-label="Download here">
                 <defs>
                   <path
                     id="downloadHintTextCurve"
-                    d="M92 146 C128 160, 192 160, 228 146"
+                    d="M72 151
+                       C96 132, 113 108, 119 82
+                       C122 69, 124 58, 125 49"
                   />
-                  <marker
-                    id="downloadArrowHead"
-                    markerWidth="8"
-                    markerHeight="8"
-                    refX="7"
-                    refY="4"
-                    orient="auto"
-                    markerUnits="strokeWidth"
-                  >
-                    <path
-                      d="M1 1 L7 4 L1 7"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </marker>
                 </defs>
 
                 <path
                   class="store-download-arrow"
-                  marker-end="url(#downloadArrowHead)"
-                  d="M246 108
-                     C241 82, 226 61, 205 48
-                     C189 38, 173 34, 159 35"
+                  d="M42 151
+                     C78 128, 103 101, 114 72
+                     C120 57, 123 43, 124 29"
+                />
+
+                <path
+                  class="store-download-arrowhead"
+                  d="M115 41 L124 28 L133 41"
                 />
 
                 <text class="store-download-text">
-                  <textPath href="#downloadHintTextCurve" startOffset="50%" text-anchor="middle">
+                  <textPath href="#downloadHintTextCurve" startOffset="6%">
                     download here :)
                   </textPath>
                 </text>

@@ -371,7 +371,7 @@ header {
 .badges {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 12px;
   margin-top: 12px;
   flex-wrap: nowrap;
@@ -381,7 +381,7 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 1 180px;
+  flex: 0 0 180px;
   min-width: 0;
   border-radius: 10px;
   transition:
@@ -411,7 +411,7 @@ header {
 
 
 .store-download-hint {
-  width: min(320px, 72vw);
+  width: min(210px, 52vw);
   margin: 10px auto 0;
   color: #fff;
   pointer-events: none;
@@ -427,15 +427,23 @@ header {
 .store-download-arrow {
   fill: none;
   stroke: currentColor;
-  stroke-width: 8;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.store-download-arrowhead {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3.2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .store-download-text {
   fill: currentColor;
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   font-family: "Brush Script MT", "Segoe Script", cursive;
 }
 
@@ -532,16 +540,20 @@ footer {
   }
 
   .store-download-hint {
-    width: min(250px, 64vw);
+    width: min(175px, 46vw);
     margin-top: 8px;
   }
 
   .store-download-text {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .store-download-arrow {
-    stroke-width: 7;
+    stroke-width: 2.8;
+  }
+
+  .store-download-arrowhead {
+    stroke-width: 2.8;
   }
 
   :root {
