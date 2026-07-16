@@ -442,7 +442,7 @@ header {
 
 .store-download-text {
   fill: currentColor;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   font-family: "Brush Script MT", "Segoe Script", cursive;
 }
@@ -545,7 +545,7 @@ footer {
   }
 
   .store-download-text {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .store-download-arrow {
