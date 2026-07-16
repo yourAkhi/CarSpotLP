@@ -368,6 +368,10 @@ header {
 }
 
 /* Store-Badges */
+.store-download-area {
+  width: min(100%, 372px);
+}
+
 .badges {
   display: flex;
   align-items: center;
@@ -400,6 +404,57 @@ header {
   pointer-events: none;
   cursor: default;
   opacity: 0.88;
+}
+
+.download-hint {
+  width: min(100%, 300px);
+  margin: 2px auto -8px;
+  color: rgba(255, 255, 255, 0.96);
+  pointer-events: none;
+  transform: rotate(-2deg);
+}
+
+.download-hint svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.download-hint-arrow {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.download-hint-text {
+  fill: currentColor;
+  font-family: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 460px) {
+  .store-download-area {
+    width: 100%;
+  }
+
+  .download-hint {
+    width: min(78vw, 250px);
+    margin-top: 0;
+    margin-bottom: -4px;
+  }
+
+  .download-hint-arrow {
+    stroke-width: 6.5;
+  }
+
+  .download-hint-text {
+    font-size: 20px;
+  }
 }
 
 .store-badges-note {
