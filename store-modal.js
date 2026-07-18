@@ -16,7 +16,6 @@
   const storeView = modal.querySelector('[data-store-modal-view="store"]');
   const iosPwaView = modal.querySelector('[data-store-modal-view="ios-pwa"]');
   const iosPwaTrigger = modal.querySelector("[data-ios-pwa-trigger]");
-  const backButton = modal.querySelector("[data-store-modal-back]");
 
   const storeContent = {
     ios: {
@@ -125,23 +124,13 @@
 
   iosPwaTrigger?.addEventListener("click", showIosPwaView);
 
-  backButton?.addEventListener("click", () => {
-    showInitialView();
-    requestAnimationFrame(() => iosPwaTrigger?.focus());
-  });
-
   document.addEventListener("keydown", (event) => {
     if (modal.hidden) return;
 
     if (event.key === "Escape") {
       event.preventDefault();
 
-      if (modal.dataset.modalView === "ios-pwa") {
-        showInitialView();
-        requestAnimationFrame(() => iosPwaTrigger?.focus());
-      } else {
-        closeModal();
-      }
+      closeModal();
       return;
     }
 

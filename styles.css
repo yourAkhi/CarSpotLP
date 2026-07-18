@@ -1067,16 +1067,12 @@ button.store-modal__store-link {
   font-weight: 900;
 }
 
-.store-modal__step a {
+.store-modal__step-domain {
   color: var(--brand-2);
   font-weight: 800;
   text-decoration: none;
 }
 
-.store-modal__step a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 
 .store-modal__step-copy {
   display: flex;
@@ -1098,14 +1094,13 @@ button.store-modal__store-link {
 
 .store-modal__pwa-actions {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: 10px;
   max-width: 500px;
   margin: 17px auto 0;
 }
 
-.store-modal__pwa-open,
-.store-modal__back {
+.store-modal__pwa-open {
   min-height: 48px;
   display: inline-flex;
   align-items: center;
@@ -1140,27 +1135,13 @@ button.store-modal__store-link {
   stroke-linejoin: round;
 }
 
-.store-modal__back {
-  padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.045);
-  cursor: pointer;
-}
 
-.store-modal__pwa-open:hover,
-.store-modal__back:hover {
+.store-modal__pwa-open:hover {
   transform: translateY(-2px);
 }
 
-.store-modal__back:hover {
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.08);
-}
 
-.store-modal__pwa-open:focus-visible,
-.store-modal__back:focus-visible,
-.store-modal__step a:focus-visible {
+.store-modal__pwa-open:focus-visible {
   outline: 3px solid rgba(130, 255, 210, 0.34);
   outline-offset: 3px;
 }
@@ -1215,8 +1196,7 @@ button.store-modal__store-link {
     margin-top: 14px;
   }
 
-  .store-modal__pwa-open,
-  .store-modal__back {
+  .store-modal__pwa-open {
     min-height: 44px;
   }
 }
@@ -1249,8 +1229,7 @@ button.store-modal__store-link {
     margin-top: 10px;
   }
 
-  .store-modal__pwa-open,
-  .store-modal__back {
+  .store-modal__pwa-open {
     min-height: 40px;
   }
 }
@@ -1260,8 +1239,7 @@ button.store-modal__store-link {
     animation: none;
   }
 
-  .store-modal__pwa-open,
-  .store-modal__back {
+  .store-modal__pwa-open {
     transition: none;
   }
 }
