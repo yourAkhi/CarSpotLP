@@ -16,7 +16,7 @@
 
   const storeContent = {
     ios: {
-      eyebrow: "Jetzt im Apple App Store",
+      eyebrow: "Danke für deinen Support",
       platform: "LOS GEHT'S! 😎",
     },
     android: {
