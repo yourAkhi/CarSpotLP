@@ -765,7 +765,7 @@ body.store-modal-open .container {
 
 .store-modal h2 {
   margin: 0;
-  font-size: clamp(28px, 6vw, 42px);
+  font-size: clamp(24px, 4.5vw, 34px);
   line-height: 1.08;
   letter-spacing: -0.035em;
   text-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
