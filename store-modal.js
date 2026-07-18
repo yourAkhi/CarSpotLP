@@ -11,19 +11,16 @@
   );
   const storeLinks = Array.from(modal.querySelectorAll("[data-store-link]"));
   const dialog = modal.querySelector(".store-modal__dialog");
-  const modalTitle = modal.querySelector("[data-store-modal-title]");
   const modalEyebrow = modal.querySelector("[data-store-modal-eyebrow]");
   const modalPlatform = modal.querySelector("[data-store-modal-platform]");
 
   const storeContent = {
     ios: {
-      title: "CarSpot für iPhone und iPad",
       eyebrow: "Jetzt im Apple App Store",
       platform: "LOS GEHT'S! 😎",
     },
     android: {
-      title: "CarSpot für Android",
-      eyebrow: "Jetzt bei Google Play",
+      eyebrow: "Danke für deinen Support",
       platform: "LOS GEHT'S! 😎",
     },
   };
@@ -48,7 +45,6 @@
       link.classList.toggle("is-selected", isSelected);
     });
 
-    if (modalTitle) modalTitle.textContent = content.title;
     if (modalEyebrow) modalEyebrow.textContent = content.eyebrow;
     if (modalPlatform) modalPlatform.textContent = content.platform;
 
