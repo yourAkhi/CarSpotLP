@@ -579,7 +579,10 @@ footer {
 /* Store-Modal */
 .store-badge--button {
   appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   border: 0;
+  outline: none;
   padding: 0;
   background: transparent;
   color: inherit;
@@ -592,12 +595,15 @@ footer {
 }
 
 .store-badge--button:active {
+  background: transparent;
+  box-shadow: none;
   transform: translateY(-1px) scale(0.99);
 }
 
+.store-badge--button:focus,
 .store-badge--button:focus-visible {
-  outline: 3px solid rgba(130, 255, 210, 0.38);
-  outline-offset: 5px;
+  outline: none;
+  box-shadow: none;
 }
 
 body.store-modal-open {
