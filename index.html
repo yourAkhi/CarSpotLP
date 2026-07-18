@@ -262,49 +262,114 @@
           <span>CarSpot</span>
         </div>
 
-        <div id="store-modal-heading" class="store-modal__eyebrow" data-store-modal-eyebrow>Danke für deinen Support</div>
-        <p id="store-modal-description" class="store-modal__description">
-          In CarSpot sind unzählige Stunden Entwicklung, viele Tests und eine
-          große Portion Herzblut geflossen. Jeder Download, jedes Feedback und
-          jeder geteilte Spot hilft dabei, das Projekt weiter wachsen zu lassen.
-          <span class="store-modal__thank-you">Danke, dass du ein Teil davon bist! 🥹😊</span>
-        </p>
+        <div class="store-modal__view" data-store-modal-view="store">
+          <div
+            id="store-modal-heading"
+            class="store-modal__eyebrow"
+            data-store-modal-eyebrow
+          >
+            Danke für deinen Support
+          </div>
+          <p id="store-modal-description" class="store-modal__description">
+            In CarSpot sind unzählige Stunden Entwicklung, viele Tests und eine
+            große Portion Herzblut geflossen. Jeder Download, jedes Feedback und
+            jeder geteilte Spot hilft dabei, das Projekt weiter wachsen zu lassen.
+            <span class="store-modal__thank-you">Danke, dass du ein Teil davon bist! 🥹😊</span>
+          </p>
 
-        <div class="store-modal__divider" aria-hidden="true">
-          <span></span>
-          <strong data-store-modal-platform>LOS GEHT'S! 😎</strong>
-          <span></span>
+          <div class="store-modal__divider" aria-hidden="true">
+            <span></span>
+            <strong data-store-modal-platform>LOS GEHT'S! 😎</strong>
+            <span></span>
+          </div>
+
+          <div class="store-modal__actions">
+            <button
+              class="store-modal__store-link"
+              type="button"
+              data-store-link="ios"
+              data-ios-pwa-trigger
+              aria-label="Anleitung zur Installation von CarSpot auf iPhone und iPad anzeigen"
+            >
+              <img
+                src="assets/store-badges/app-store-de.svg"
+                alt="Laden im App Store"
+                width="180"
+                height="54"
+              />
+            </button>
+
+            <a
+              class="store-modal__store-link"
+              data-store-link="android"
+              href="https://play.google.com/store/apps/details?id=com.CarSpot"
+              aria-label="CarSpot bei Google Play öffnen"
+            >
+              <img
+                src="assets/store-badges/google-play-de.svg"
+                alt="Jetzt bei Google Play"
+                width="180"
+                height="54"
+              />
+            </a>
+          </div>
         </div>
 
-        <div class="store-modal__actions">
-          <!-- Die finale Apple-App-ID kann später direkt in diesem href ersetzt werden. -->
-          <a
-            class="store-modal__store-link"
-            data-store-link="ios"
-            href="https://apps.apple.com/de/"
-            aria-label="CarSpot im Apple App Store öffnen"
-          >
-            <img
-              src="assets/store-badges/app-store-de.svg"
-              alt="Laden im App Store"
-              width="180"
-              height="54"
-            />
-          </a>
+        <div
+          class="store-modal__view store-modal__pwa-view"
+          data-store-modal-view="ios-pwa"
+          hidden
+          aria-live="polite"
+        >
+          <div id="ios-pwa-heading" class="store-modal__eyebrow">
+            CarSpot auf iPhone &amp; iPad
+          </div>
+          <h2 class="store-modal__pwa-title">Schon jetzt als App nutzbar</h2>
+          <p id="ios-pwa-description" class="store-modal__pwa-description">
+            Die iOS-Version ist noch in Entwicklung. Bis zum App-Store-Release
+            kannst du CarSpot ganz einfach als PWA installieren:
+          </p>
 
-          <a
-            class="store-modal__store-link"
-            data-store-link="android"
-            href="https://play.google.com/store/apps/details?id=com.CarSpot"
-            aria-label="CarSpot bei Google Play öffnen"
-          >
-            <img
-              src="assets/store-badges/google-play-de.svg"
-              alt="Jetzt bei Google Play"
-              width="180"
-              height="54"
-            />
-          </a>
+          <ol class="store-modal__steps">
+            <li class="store-modal__step">
+              <span class="store-modal__step-number">1</span>
+              <span>
+                <a href="https://app.carspot.gg" target="_blank" rel="noopener noreferrer">app.carspot.gg</a>
+                in Safari aufrufen.
+              </span>
+            </li>
+            <li class="store-modal__step">
+              <span class="store-modal__step-number">2</span>
+              <span class="store-modal__step-copy">
+                Auf den iOS-Teilen-Button tippen.
+                <svg class="store-modal__share-icon" viewBox="0 0 24 24" aria-label="iOS Teilen-Symbol" role="img">
+                  <path d="M12 16V3m0 0-4 4m4-4 4 4" />
+                  <path d="M7 10H5.8A1.8 1.8 0 0 0 4 11.8v7.4A1.8 1.8 0 0 0 5.8 21h12.4a1.8 1.8 0 0 0 1.8-1.8v-7.4a1.8 1.8 0 0 0-1.8-1.8H17" />
+                </svg>
+              </span>
+            </li>
+            <li class="store-modal__step">
+              <span class="store-modal__step-number">3</span>
+              <span>„Zum Home-Bildschirm hinzufügen“ wählen und mit „OK“ bestätigen.</span>
+            </li>
+          </ol>
+
+          <div class="store-modal__pwa-actions">
+            <a
+              class="store-modal__pwa-open"
+              href="https://app.carspot.gg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CarSpot jetzt öffnen
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <button class="store-modal__back" type="button" data-store-modal-back>
+              Zurück
+            </button>
+          </div>
         </div>
       </div>
     </div>

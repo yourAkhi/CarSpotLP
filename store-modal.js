@@ -13,6 +13,10 @@
   const dialog = modal.querySelector(".store-modal__dialog");
   const modalEyebrow = modal.querySelector("[data-store-modal-eyebrow]");
   const modalPlatform = modal.querySelector("[data-store-modal-platform]");
+  const storeView = modal.querySelector('[data-store-modal-view="store"]');
+  const iosPwaView = modal.querySelector('[data-store-modal-view="ios-pwa"]');
+  const iosPwaTrigger = modal.querySelector("[data-ios-pwa-trigger]");
+  const backButton = modal.querySelector("[data-store-modal-back]");
 
   const storeContent = {
     ios: {
@@ -32,11 +36,41 @@
       modal.querySelectorAll(
         'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
       )
-    ).filter((element) => !element.hasAttribute("hidden"));
+    ).filter(
+      (element) =>
+        !element.hasAttribute("hidden") &&
+        !element.closest("[hidden]")
+    );
+
+  const showInitialView = () => {
+    if (storeView) storeView.hidden = false;
+    if (iosPwaView) iosPwaView.hidden = true;
+
+    modal.dataset.modalView = "store";
+    modal.setAttribute("aria-labelledby", "store-modal-heading");
+    modal.setAttribute("aria-describedby", "store-modal-description");
+  };
+
+  const showIosPwaView = () => {
+    if (!storeView || !iosPwaView) return;
+
+    storeView.hidden = true;
+    iosPwaView.hidden = false;
+
+    modal.dataset.modalView = "ios-pwa";
+    modal.setAttribute("aria-labelledby", "ios-pwa-heading");
+    modal.setAttribute("aria-describedby", "ios-pwa-description");
+
+    requestAnimationFrame(() => {
+      iosPwaView.querySelector("a[href]")?.focus();
+    });
+  };
 
   const showStoreContext = (store) => {
     const selectedStore = storeContent[store] ? store : "ios";
     const content = storeContent[selectedStore];
+
+    showInitialView();
 
     storeLinks.forEach((link) => {
       const isSelected = link.dataset.storeLink === selectedStore;
@@ -72,6 +106,7 @@
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("store-modal-open");
+    showInitialView();
 
     if (lastFocusedElement instanceof HTMLElement) {
       lastFocusedElement.focus();
@@ -88,12 +123,25 @@
     button.addEventListener("click", closeModal);
   });
 
+  iosPwaTrigger?.addEventListener("click", showIosPwaView);
+
+  backButton?.addEventListener("click", () => {
+    showInitialView();
+    requestAnimationFrame(() => iosPwaTrigger?.focus());
+  });
+
   document.addEventListener("keydown", (event) => {
     if (modal.hidden) return;
 
     if (event.key === "Escape") {
       event.preventDefault();
-      closeModal();
+
+      if (modal.dataset.modalView === "ios-pwa") {
+        showInitialView();
+        requestAnimationFrame(() => iosPwaTrigger?.focus());
+      } else {
+        closeModal();
+      }
       return;
     }
 
