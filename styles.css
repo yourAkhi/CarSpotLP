@@ -600,6 +600,12 @@ footer {
   outline-offset: 5px;
 }
 
+body.store-modal-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 body.store-modal-open .container {
   overflow: hidden;
 }
@@ -612,6 +618,7 @@ body.store-modal-open .container {
   place-items: center;
   padding: max(18px, env(safe-area-inset-top, 0px)) 18px
     max(18px, env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
 }
 
 .store-modal[hidden] {
@@ -638,8 +645,7 @@ body.store-modal-open .container {
   isolation: isolate;
   width: min(100%, 590px);
   max-height: min(760px, calc(100dvh - 36px));
-  overflow: auto;
-  scrollbar-width: thin;
+  overflow: hidden;
   padding: 34px clamp(22px, 5vw, 42px) 30px;
   border: 1px solid transparent;
   border-radius: 28px;
@@ -904,15 +910,17 @@ body.store-modal-open .container {
 
 @media (max-width: 560px) {
   .store-modal {
-    place-items: end center;
-    padding: 10px 10px max(10px, env(safe-area-inset-bottom, 0px));
+    place-items: center;
+    padding: max(12px, env(safe-area-inset-top, 0px)) 12px
+      max(12px, env(safe-area-inset-bottom, 0px));
   }
 
   .store-modal__dialog {
-    width: 100%;
-    max-height: calc(100dvh - 20px);
-    padding: 30px 18px 24px;
+    width: min(100%, 460px);
+    max-height: calc(100dvh - 24px);
+    padding: clamp(26px, 5dvh, 32px) 18px clamp(20px, 4dvh, 24px);
     border-radius: 24px;
+    overflow: hidden;
   }
 
   .store-modal__brand {
@@ -936,6 +944,45 @@ body.store-modal-open .container {
 
   .store-modal__store-note {
     text-align: right;
+  }
+}
+
+@media (max-width: 560px) and (max-height: 680px) {
+  .store-modal__dialog {
+    padding-top: 24px;
+    padding-bottom: 18px;
+  }
+
+  .store-modal__brand {
+    margin-bottom: 10px;
+  }
+
+  .store-modal__logo-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .store-modal__eyebrow {
+    margin-bottom: 6px;
+  }
+
+  .store-modal h2 {
+    font-size: clamp(23px, 7vw, 29px);
+  }
+
+  .store-modal__description {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .store-modal__divider {
+    margin: 18px 0 13px;
+  }
+
+  .store-modal__store-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 

@@ -19,12 +19,12 @@
     ios: {
       title: "CarSpot für iPhone und iPad",
       eyebrow: "Jetzt im Apple App Store",
-      platform: "Für iPhone und iPad",
+      platform: "LOS GEHT'S! 😎",
     },
     android: {
       title: "CarSpot für Android",
       eyebrow: "Jetzt bei Google Play",
-      platform: "Für Android-Geräte",
+      platform: "LOS GEHT'S! 😎",
     },
   };
 
