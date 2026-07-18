@@ -806,8 +806,14 @@ body.store-modal-open .container {
 
 .store-modal__actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
+  width: min(100%, 310px);
+  margin-inline: auto;
+}
+
+.store-modal__store-link[hidden] {
+  display: none !important;
 }
 
 .store-modal__store-link {
