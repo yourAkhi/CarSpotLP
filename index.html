@@ -96,12 +96,13 @@
             </div>
 
             <div class="badges" aria-label="CarSpot in den App Stores">
-              <a
-                class="store-badge disabled"
-                aria-disabled="true"
-                tabindex="-1"
-                role="link"
-                title="Bald im App Store verfügbar"
+              <button
+                class="store-badge store-badge--button"
+                type="button"
+                data-open-store-modal="ios"
+                aria-haspopup="dialog"
+                aria-controls="store-modal"
+                title="CarSpot für iOS ansehen"
               >
                 <img
                   src="assets/store-badges/app-store-de.svg"
@@ -109,13 +110,14 @@
                   width="180"
                   height="54"
                 />
-              </a>
-              <a
-                class="store-badge disabled"
-                aria-disabled="true"
-                tabindex="-1"
-                role="link"
-                title="Bald bei Google Play verfügbar"
+              </button>
+              <button
+                class="store-badge store-badge--button"
+                type="button"
+                data-open-store-modal="android"
+                aria-haspopup="dialog"
+                aria-controls="store-modal"
+                title="CarSpot für Android ansehen"
               >
                 <img
                   src="assets/store-badges/google-play-de.svg"
@@ -123,7 +125,7 @@
                   width="180"
                   height="54"
                 />
-              </a>
+              </button>
             </div>
 
             <div class="store-download-hint" aria-hidden="true">
@@ -226,6 +228,94 @@
       </footer>
     </div>
 
+    <div
+      id="store-modal"
+      class="store-modal"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="store-modal-title"
+      aria-describedby="store-modal-description"
+    >
+      <div class="store-modal__backdrop" data-close-store-modal></div>
+
+      <div class="store-modal__dialog" role="document">
+        <button
+          class="store-modal__close"
+          type="button"
+          data-close-store-modal
+          aria-label="Fenster schließen"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+
+        <div class="store-modal__brand" aria-hidden="true">
+          <div class="store-modal__logo-wrap">
+            <img
+              src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"
+              alt=""
+            />
+          </div>
+          <span>CarSpot</span>
+        </div>
+
+        <div class="store-modal__eyebrow">Danke für deinen Support</div>
+        <h2 id="store-modal-title">Bereit für deinen nächsten Spot?</h2>
+        <p id="store-modal-description" class="store-modal__description">
+          In CarSpot sind unzählige Stunden Entwicklung, viele Tests und eine
+          große Portion Herzblut geflossen. Jeder Download, jedes Feedback und
+          jeder geteilte Spot hilft dabei, das Projekt weiterzuentwickeln und
+          die Community wachsen zu lassen. Danke, dass du ein Teil davon bist!
+        </p>
+
+        <div class="store-modal__divider" aria-hidden="true">
+          <span></span>
+          <strong>App auswählen</strong>
+          <span></span>
+        </div>
+
+        <div class="store-modal__actions">
+          <!-- Die finale Apple-App-ID kann später direkt in diesem href ersetzt werden. -->
+          <a
+            class="store-modal__store-link"
+            data-store-link="ios"
+            href="https://apps.apple.com/de/"
+            aria-label="CarSpot im Apple App Store öffnen"
+          >
+            <img
+              src="assets/store-badges/app-store-de.svg"
+              alt="Laden im App Store"
+              width="180"
+              height="54"
+            />
+            <span class="store-modal__store-note">Für iPhone und iPad</span>
+          </a>
+
+          <a
+            class="store-modal__store-link"
+            data-store-link="android"
+            href="https://play.google.com/store/apps/details?id=com.CarSpot"
+            aria-label="CarSpot bei Google Play öffnen"
+          >
+            <img
+              src="assets/store-badges/google-play-de.svg"
+              alt="Jetzt bei Google Play"
+              width="180"
+              height="54"
+            />
+            <span class="store-modal__store-note">Für Android-Geräte</span>
+          </a>
+        </div>
+
+        <p class="store-modal__hint">
+          Du wirst nach deiner Auswahl direkt zum jeweiligen Store weitergeleitet.
+        </p>
+      </div>
+    </div>
+
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -263,6 +353,7 @@
       </div>
     </div>
     <script src="scroll-gradient.js"></script>
+    <script src="store-modal.js"></script>
     <script src="cookie-banner.js"></script>
   </body>
 </html>
