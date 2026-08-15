@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<title>CarSpot</title>
-<meta content="Die offizielle Landing Page für CarSpot!" name="description"/>
+<title>CarSpot – Releases</title>
+<meta content="Alle CarSpot Releases im Überblick – mit Neuerungen, Verbesserungen und Fehlerbehebungen der einzelnen Versionen." name="description"/>
 <meta content="index,follow" name="robots"/>
 <meta content="#0b0f1a" name="theme-color"/>
 <meta content="#0b0f1a" media="(prefers-color-scheme: dark)" name="theme-color"/>
@@ -22,7 +22,7 @@
 <link href="cookie-banner.css" rel="stylesheet"/>
 <link href="site-shell.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="release-page">
 <div class="menu-backdrop" data-menu-backdrop="" hidden=""></div>
 <aside aria-hidden="true" aria-label="Seitennavigation" class="menu-drawer" data-menu-drawer="" id="site-navigation">
 <div class="menu-drawer__head">
@@ -34,7 +34,7 @@
 </button>
 </div>
 <nav aria-label="CarSpot Bereiche" class="menu-drawer__nav">
-<a class="menu-drawer__link" data-menu-link="" href="releases.html">
+<a class="menu-drawer__link" data-menu-link="" href="#releases">
 <span>
 <small>Was ist neu?</small>
 <strong>Releases</strong>
@@ -49,12 +49,12 @@
 </aside>
 <div class="container">
 <header>
-<div class="logo logo--xl">
+<a aria-label="Zur CarSpot Startseite" class="logo logo--xl" href="index.html">
 <div class="logo-badge">
 <img alt="CarSpot Logo" class="logo-icon" src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"/>
 </div>
 <span>CarSpot</span>
-</div>
+</a>
 <button aria-controls="site-navigation" aria-expanded="false" aria-label="Navigation öffnen" class="menu-toggle" data-menu-toggle="" type="button">
 <span class="menu-toggle__line"></span>
 <span class="menu-toggle__line"></span>
@@ -62,66 +62,127 @@
 </button>
 </header>
 <main>
-<section class="hero" id="home">
-<div class="hero-copy">
-<h1>Finde Spots easy – mit CarSpot! 😎📱</h1>
-<p>
-<span class="hero-intro">
-  Keine Lust mehr, lange nach einer passenden Location zu suchen?
-  CarSpot zeigt dir die besten Orte für dein nächstes Shooting. 📸
-</span>
-<br/>
-<br/>
-</p>
-<br/><br/>
-<div class="mock">
-<img alt="CarSpot App Screenshot" class="mock-img" decoding="async" loading="lazy" src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/mock.png"/>
-</div>
-<div aria-label="CarSpot in den App Stores" class="badges">
-<button aria-controls="store-modal" aria-haspopup="dialog" class="store-badge store-badge--button" data-open-store-modal="ios" title="CarSpot für iOS ansehen" type="button">
-<img alt="Laden im App Store" height="54" src="assets/store-badges/app-store-de.svg" width="180"/>
-</button>
-<button aria-controls="store-modal" aria-haspopup="dialog" class="store-badge store-badge--button" data-open-store-modal="android" title="CarSpot für Android ansehen" type="button">
-<img alt="Jetzt bei Google Play" height="54" src="assets/store-badges/google-play-de.svg" width="180"/>
-</button>
-</div>
-<div aria-hidden="true" class="store-download-hint">
-<svg aria-label="Download here" role="img" viewbox="0 0 220 180">
-<defs>
-<path d="M52 150
-                       C84 130, 107 104, 117 77
-                       C122 64, 125 53, 126 43" id="downloadHintTextCurve"></path>
-</defs>
-<path class="store-download-arrow" d="M42 151
-                     C78 128, 103 101, 114 72
-                     C120 57, 123 43, 124 29"></path>
-<path class="store-download-arrowhead" d="M115 41 L124 28 L133 41"></path>
-<text class="store-download-text" transform="translate(16 0)">
-<textpath href="#downloadHintTextCurve" lengthadjust="spacingAndGlyphs" startoffset="0%" textlength="130">
-                    download here :)
-                  </textpath>
-</text>
-</svg>
-</div>
-</div>
-</section>
 
-<section class="section" id="kontakt">
-<h2>Kontakt</h2>
+
+
+<section aria-labelledby="release-title" class="release-section" id="releases">
+<div class="release-section-head">
+<div>
+<span class="release-eyebrow">Versionsverlauf</span>
+<h2 id="release-title">CarSpot Releases</h2>
 <p>
-            Du hast Fragen? Kontaktiere mich:<br/>
-<a href="mailto:info@carspot.gg">info@carspot.gg</a>
-</p>
-<div class="socials">
-<a aria-label="CarSpot auf Instagram" class="social-link" href="https://www.instagram.com/carspot.gg/" target="_blank">
-<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 4a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm5.5-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"></path>
-</svg>
-<span class="social-handle">@carspot.gg</span>
-</a>
+                Alle wichtigen Neuerungen, Verbesserungen und Fehlerbehebungen
+                der letzten CarSpot-Versionen im Überblick.
+              </p>
 </div>
+<span aria-label="Aktuelle Version 2.3" class="release-current-version">
+              Aktuell: 2.3
+            </span>
+</div>
+<div class="release-timeline">
+<article class="release-card release-card--current">
+<div aria-hidden="true" class="release-marker"></div>
+<div class="release-card-inner">
+<div class="release-card-head">
+<div>
+<div class="release-version-row">
+<span class="release-version">Version 2.3</span>
+<span class="release-status">Aktuell</span>
+</div>
+<time datetime="2026-08-14">14. August 2026</time>
+</div>
+</div>
+<p class="release-summary">
+                  Fokus auf einen zuverlässigeren Update-Prozess und ein
+                  konsistenteres Verhalten der Standortfunktion.
+                </p>
+<div class="release-groups">
+<section aria-labelledby="release-23-improved" class="release-group release-group--improved">
+<div class="release-group-title">
+<span aria-hidden="true" class="release-group-icon">↑</span>
+<h3 id="release-23-improved">Verbessert</h3>
+</div>
+<ul>
+<li>
+                        Neue CarSpot-Versionen werden zuverlässiger erkannt,
+                        kurz vorbereitet und anschließend automatisch geladen.
+                      </li>
+<li>
+                        Beim erneuten Orten wird die Karte wieder auf den
+                        festgelegten Ausgangszoom 10 gesetzt.
+                      </li>
+</ul>
 </section>
-</main>
+</div>
+</div>
+</article>
+<article class="release-card">
+<div aria-hidden="true" class="release-marker"></div>
+<div class="release-card-inner">
+<div class="release-card-head">
+<div>
+<div class="release-version-row">
+<span class="release-version">Version 2.2</span>
+</div>
+<time datetime="2026-08-13">13. August 2026</time>
+</div>
+</div>
+<p class="release-summary">
+                  Mehr Kontrolle im Profil und Filtermenü sowie mehrere
+                  Verbesserungen an Darstellung und Accountverwaltung.
+                </p>
+<div class="release-groups">
+<section aria-labelledby="release-22-new" class="release-group release-group--new">
+<div class="release-group-title">
+<span aria-hidden="true" class="release-group-icon">+</span>
+<h3 id="release-22-new">Neu</h3>
+</div>
+<ul>
+<li>
+                        Alias bzw. Nickname kann jetzt direkt im Benutzerprofil
+                        geändert werden.
+                      </li>
+<li>
+                        Das Filtermenü zeigt die Anzahl der aktuell sichtbaren
+                        Spots passend zum Kartenausschnitt und den gesetzten
+                        Filtern.
+                      </li>
+</ul>
+</section>
+<section aria-labelledby="release-22-improved" class="release-group release-group--improved">
+<div class="release-group-title">
+<span aria-hidden="true" class="release-group-icon">↑</span>
+<h3 id="release-22-improved">Verbessert</h3>
+</div>
+<ul>
+<li>
+                        Bereits angesehene Spots werden auf der Karte leicht
+                        transparent dargestellt.
+                      </li>
+<li>
+                        Eigene Spots lassen sich jetzt direkt im Filtermenü
+                        ein- und ausblenden.
+                      </li>
+</ul>
+</section>
+<section aria-labelledby="release-22-fixed" class="release-group release-group--fixed">
+<div class="release-group-title">
+<span aria-hidden="true" class="release-group-icon">✓</span>
+<h3 id="release-22-fixed">Behoben</h3>
+</div>
+<ul>
+<li>Fehler bei der Accountlöschung behoben.</li>
+<li>
+                        Fehlerhafte Berechnung der Headerhöhe auf
+                        Android-Geräten korrigiert.
+                      </li>
+</ul>
+</section>
+</div>
+</div>
+</article>
+</div>
+</section></main>
 <footer>
 <div>© <span id="y"></span> CarSpot</div>
 <div class="footer-legal-links">
@@ -139,89 +200,7 @@
 </div>
 </footer>
 </div>
-<div aria-describedby="store-modal-description" aria-hidden="true" aria-labelledby="store-modal-heading" aria-modal="true" class="store-modal" hidden="" id="store-modal" role="dialog">
-<div class="store-modal__backdrop" data-close-store-modal=""></div>
-<div class="store-modal__dialog" role="document">
-<button aria-label="Fenster schließen" class="store-modal__close" data-close-store-modal="" type="button">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M6 6l12 12M18 6 6 18"></path>
-</svg>
-</button>
-<div aria-hidden="true" class="store-modal__brand">
-<div class="store-modal__logo-wrap">
-<img alt="" src="https://loqbwivthmbawdzfdvic.supabase.co/storage/v1/object/public/assets/carspot-logo.png"/>
-</div>
-<span>CarSpot</span>
-</div>
-<div class="store-modal__view" data-store-modal-view="store">
-<div class="store-modal__eyebrow" data-store-modal-eyebrow="" id="store-modal-heading">
-            Danke für deinen Support
-          </div>
-<p class="store-modal__description" id="store-modal-description">
-            In CarSpot sind unzählige Stunden Entwicklung, viele Tests und eine
-            große Portion Herzblut geflossen. Jeder Download, jedes Feedback und
-            jeder geteilte Spot hilft dabei, das Projekt weiter wachsen zu lassen.
-            <span class="store-modal__thank-you">Danke, dass du ein Teil davon bist! 🥹😊</span>
-</p>
-<div aria-hidden="true" class="store-modal__divider">
-<span></span>
-<strong data-store-modal-platform="">LOS GEHT'S! 😎</strong>
-<span></span>
-</div>
-<div class="store-modal__actions">
-<button aria-label="Anleitung zur Installation von CarSpot auf iPhone und iPad anzeigen" class="store-modal__store-link" data-ios-pwa-trigger="" data-store-link="ios" type="button">
-<img alt="Laden im App Store" height="54" src="assets/store-badges/app-store-de.svg" width="180"/>
-</button>
-<a aria-label="CarSpot bei Google Play öffnen" class="store-modal__store-link" data-store-link="android" href="https://play.google.com/store/apps/details?id=com.CarSpot">
-<img alt="Jetzt bei Google Play" height="54" src="assets/store-badges/google-play-de.svg" width="180"/>
-</a>
-</div>
-</div>
-<div aria-live="polite" class="store-modal__view store-modal__pwa-view" data-store-modal-view="ios-pwa" hidden="">
-<div class="store-modal__eyebrow" id="ios-pwa-heading">
-            CARSPOT FÜR iOS
-          </div>
-<h2 class="store-modal__pwa-title">Schon jetzt nutzbar</h2>
-<p class="store-modal__pwa-description" id="ios-pwa-description">
-            Die native iOS-App befindet sich noch in der Entwicklung und wird
-            mittelfristig bereitgestellt. Bis zum App-Store Release kannst du
-            CarSpot trotzdem ganz einfach nutzen.
-            <span class="store-modal__thank-you">Dafür folgende 3 Steps befolgen:</span>
-</p>
-<ol class="store-modal__steps">
-<li class="store-modal__step">
-<span class="store-modal__step-number">1</span>
-<span>
-<span class="store-modal__step-domain">app.carspot.gg</span>
-                in Safari aufrufen
-              </span>
-</li>
-<li class="store-modal__step">
-<span class="store-modal__step-number">2</span>
-<span class="store-modal__step-copy">
-                Auf den iOS-Teilen Button tippen
-                <svg aria-label="iOS Teilen-Symbol" class="store-modal__share-icon" role="img" viewbox="0 0 24 24">
-<path d="M12 16V3m0 0-4 4m4-4 4 4"></path>
-<path d="M7 10H5.8A1.8 1.8 0 0 0 4 11.8v7.4A1.8 1.8 0 0 0 5.8 21h12.4a1.8 1.8 0 0 0 1.8-1.8v-7.4a1.8 1.8 0 0 0-1.8-1.8H17"></path>
-</svg>
-</span>
-</li>
-<li class="store-modal__step">
-<span class="store-modal__step-number">3</span>
-<span>Auf " Zum Home-Bildschirm [+] " tippen und mit "Hinzufügen" bestätigen</span>
-</li>
-</ol>
-<div class="store-modal__pwa-actions">
-<a class="store-modal__pwa-open" href="https://app.carspot.gg" rel="noopener noreferrer" target="_blank">
-              CarSpot jetzt öffnen
-              <svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M5 12h14M13 6l6 6-6 6"></path>
-</svg>
-</a>
-</div>
-</div>
-</div>
-</div>
+
 <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
@@ -245,7 +224,7 @@
 </div>
 <script src="nav-drawer.js"></script>
 <script src="scroll-gradient.js"></script>
-<script src="store-modal.js"></script>
+
 <script src="cookie-banner.js"></script>
 </body>
 </html>
