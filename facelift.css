@@ -29,7 +29,7 @@ body::before {
 }
 body::after { display: none; }
 /* Original deep blue, with a broader white gradient behind the app. */
-.home-page::before {
+.home-page::before, .release-page::before, .legal-document::before {
   position: absolute;
   background:
     radial-gradient(ellipse 70% 440px at 100% 460px, #ffffff 0%, #f2f6fc 25%, #b5c7df 42%, #6985aa70 58%, transparent 78%),
@@ -123,9 +123,63 @@ footer a:hover { color: var(--text); }
 .legal-page a { overflow-wrap: anywhere; }
 .cookie-banner__inner { background: #111a29f5; border-color: #ffffff1c; border-radius: 16px; box-shadow: 0 16px 60px #00000055; }
 .cookie-banner__text { font-size: 12px; line-height: 1.7; }
-.store-modal__dialog { background: linear-gradient(150deg, #17253b, #0e1625); border: 1px solid #ffffff20; border-radius: 24px; overflow-y: auto; overscroll-behavior: contain; }
-.ios-install-label { display: block; padding: 10px 16px; color: var(--text); font-size: 19px; }
-.ios-install-label > span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+/* Let the card contain its full content. On exceptionally short screens the
+   overlay can move as a whole, without a scroll area inside the card. */
+.store-modal { overflow-y: auto; align-items: safe center; }
+.store-modal__backdrop { position: fixed; }
+.store-modal__dialog {
+  max-height: none;
+  flex-shrink: 0;
+  background: linear-gradient(150deg, #17253b, #0e1625);
+  border: 1px solid #ffffff20;
+  border-radius: 24px;
+  overflow: clip;
+}
+.store-modal__dialog::before, .store-modal__dialog::after { display: none; }
+@media (min-width: 600px) and (max-height: 540px) {
+  .store-modal__dialog { width: min(100%, 840px); padding: 16px 28px; }
+  .store-modal__brand { margin-bottom: 8px; }
+  .store-modal__logo-wrap { width: 36px; height: 36px; }
+  .store-modal__description { margin-top: 8px; font-size: 14px; line-height: 1.45; max-width: 650px; }
+  .store-modal__thank-you { margin-top: 8px; }
+  .store-modal__divider { margin: 12px 0; }
+  .store-modal__store-link { padding: 8px 12px; }
+  .store-modal__pwa-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'eyebrow steps' 'title steps' 'description steps' 'action steps';
+    column-gap: 24px;
+    text-align: left;
+  }
+  .store-modal__pwa-view .store-modal__eyebrow { grid-area: eyebrow; margin: 0; }
+  .store-modal__pwa-title { grid-area: title; font-size: 23px; margin-top: 4px; }
+  .store-modal__pwa-description { grid-area: description; font-size: 13px; line-height: 1.4; margin-top: 8px; }
+  .store-modal__steps { grid-area: steps; margin: 0; align-self: center; gap: 6px; }
+  .store-modal__step { padding: 8px 10px; gap: 8px; font-size: 13px; }
+  .store-modal__pwa-actions { grid-area: action; width: 100%; margin-top: 10px; }
+  .store-modal__pwa-open { min-height: 40px; }
+}
+.legal-document .legal-page {
+  padding: clamp(22px, 4vw, 36px);
+  border: 1px solid #ffffff20;
+  border-radius: 24px;
+  background: linear-gradient(150deg, #17253bf5, #0e1625fa);
+}
+.legal-document .legal-page { max-width: 860px; }
+.legal-document .legal-page h1 { margin-top: 0; overflow-wrap: anywhere; hyphens: auto; }
+.release-section h2 { text-shadow: none; letter-spacing: -.04em; }
+.release-current-version {
+  background: #111a29;
+  color: var(--brand-2);
+  border-color: #82ffd259;
+}
+.release-card-inner, .release-card--current .release-card-inner {
+  background: linear-gradient(150deg, #17253bf5, #0e1625fa);
+  border-color: #ffffff20;
+  box-shadow: 0 16px 40px #00000025;
+}
+.release-card--current .release-card-inner { border-color: #92c6ec66; }
+.release-card--current .release-card-inner::before { background: #92c6ec18; }
 html.menu-open, html.menu-open body { overflow: hidden; }
 @media (max-width: 920px) {
   .container > main > .home-hero { column-gap: 30px; min-height: 660px; }
@@ -134,7 +188,7 @@ html.menu-open, html.menu-open body { overflow: hidden; }
   .header-links { gap: 18px; }
 }
 @media (max-width: 700px) {
-  .home-page::before {
+  .home-page::before, .release-page::before, .legal-document::before {
     position: absolute;
     background:
       radial-gradient(ellipse 110% 330px at 105% 620px, #ffffff 0%, #f2f6fc 27%, #b5c7df 43%, #6985aa70 58%, transparent 78%),
