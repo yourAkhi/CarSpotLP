@@ -98,7 +98,7 @@
         currentScene = scene;
       }
       queue();
-    }, 6000);
+    }, 3500);
   }
 
   function updatePlayback() {
