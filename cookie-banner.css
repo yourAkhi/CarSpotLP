@@ -209,6 +209,12 @@ footer > div:first-child {
   }
 
   .footer-legal-links {
+    width: 100%;
+    flex-wrap: wrap;
     gap: 5px;
+  }
+
+  .cookie-settings-footer--fingerprint {
+    margin-left: auto;
   }
 }
