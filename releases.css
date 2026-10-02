@@ -73,7 +73,7 @@
   padding: 24px;
   text-align: center;
   border: 1px solid #ffffff26;
-  border-radius: 0;
+  border-radius: 20px;
   background: #0b1423c9;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -274,7 +274,7 @@
   .release-hero h1 { font-size: clamp(40px, 9.2vw, 60px); }
   .release-hero__copy > p { max-width: 390px; margin: 20px auto 0; font-size: 15px; }
   .release-hero .hero-background__shade { background: linear-gradient(180deg, #081527c9, #081527a6 45%, #0b1423cc); }
-  .release-hero__version { justify-self: center; }
+  .release-hero__version { justify-self: center; border-radius: 20px; }
   .release-hero__number { font-size: 72px; }
   .release-history { margin: 28px 0 40px; }
   .release-history__head { margin-bottom: 24px; }
