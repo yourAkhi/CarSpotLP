@@ -71,7 +71,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-2); outli
 .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-2); box-shadow: 0 0 14px #82ffd245; }
 .container > main > .home-hero h1 { font-size: clamp(44px, 5.5vw, 70px); font-weight: 650; line-height: 1.07; letter-spacing: -.055em; text-shadow: none; }
 .home-hero h1 .headline-accent { color: #92c6ec; background: linear-gradient(100deg, #8cbcff, #9ae6d2); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.home-hero .hero-emoji { display: inline-block; font-size: .46em; vertical-align: middle; letter-spacing: 0; margin-left: 6px; }
+.home-hero .hero-emoji { display: inline-block; font-size: .736em; line-height: 1; vertical-align: baseline; letter-spacing: 0; margin-left: 6px; transform: translate(-3px, -3px); }
 .container > main > .home-hero .hero-copy > p { max-width: 440px; margin: 26px 0 0; font-size: 17px; line-height: 1.8; }
 .hero-intro { margin: 0; }
 .home-hero .mock { grid-area: phone; position: relative; overflow: visible; width: min(100%, 308px); margin: 0 auto; border-radius: 0; }
