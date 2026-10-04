@@ -1,5 +1,18 @@
-/* Release layout; page canvas, photography and logo come from hero-slideshow.css. */
+/* Release-specific canvas and update artwork; the logo uses the shared shell. */
 .release-page .container > header { border-bottom: 0; }
+
+.release-page::before {
+  background:
+    radial-gradient(ellipse 70% 540px at 0% 0%, #548ce833, transparent 75%),
+    radial-gradient(ellipse 55% 640px at 100% 35%, #5be0c31a, transparent 75%),
+    linear-gradient(145deg, #111f33, #0b1423 50%, #102231);
+}
+.release-page::after {
+  background: radial-gradient(circle, #92c6ec59 1px, transparent 1px) 0 0 / 28px 28px;
+  opacity: .3;
+  mask-image: linear-gradient(180deg, #000, #0005 65%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000, #0005 65%, transparent);
+}
 
 .release-hero {
   position: relative;
@@ -8,14 +21,24 @@
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 48px;
-  min-height: 380px;
-  padding: 56px 40px;
+  min-height: 340px;
+  padding: 32px 40px;
+  overflow: hidden;
+  border: 1px solid #92c6ec33;
+  border-radius: 24px;
+  box-shadow: 0 18px 48px #00000026, inset 0 1px 0 #ffffff08;
 }
 
-.release-hero .hero-background__shade {
+.release-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background:
-    linear-gradient(90deg, #081527ed, #081527b3 48%, #08152773),
-    linear-gradient(180deg, #0b0f1a08 40%, #0b1423d9);
+    linear-gradient(90deg, #0e1c30f5, #0e1c3080 48%, #0e1c3000 100%),
+    url('assets/release-roadmap.svg') right center / auto 100% no-repeat,
+    radial-gradient(ellipse at 100% 0%, #224f5d, transparent 75%),
+    linear-gradient(135deg, #182f4e, #0c192a);
 }
 
 .release-hero .hero-eyebrow { color: #d1ddeb; }
@@ -264,16 +287,27 @@
 }
 
 @media (max-width: 700px) {
+  .release-page .container {
+    padding: calc(20px + var(--safe-top, 0px)) 16px calc(24px + var(--safe-bottom, 0px));
+  }
+  .release-page .container > header { padding-bottom: 24px; }
+  .release-page .container > header .logo-badge { width: 64px; height: 64px; flex-basis: 64px; }
   .release-hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     min-height: 0;
-    padding: calc(142px + var(--safe-top, 0px)) 0 44px;
+    padding: 28px 20px 32px;
   }
   .release-hero__copy { text-align: center; }
-  .release-hero h1 { font-size: clamp(40px, 9.2vw, 60px); }
+  .release-hero h1 { font-size: clamp(36px, 9.2vw, 60px); }
   .release-hero__copy > p { max-width: 390px; margin: 20px auto 0; font-size: 15px; }
-  .release-hero .hero-background__shade { background: linear-gradient(180deg, #081527c9, #081527a6 45%, #0b1423cc); }
+  .release-hero .hero-eyebrow { justify-content: center; font-size: 10px; letter-spacing: .12em; }
+  .release-hero__background {
+    background:
+      linear-gradient(180deg, #0e1c30e6, #0e1c30a6 45%, #0e1c3026),
+      url('assets/release-roadmap.svg') 75% bottom / auto 100% no-repeat,
+      linear-gradient(135deg, #182f4e, #133439);
+  }
   .release-hero__version { justify-self: center; border-radius: 20px; }
   .release-hero__number { font-size: 72px; }
   .release-history { margin: 28px 0 40px; }

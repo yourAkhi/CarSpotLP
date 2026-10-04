@@ -104,18 +104,6 @@
 }
 
 @media (max-width: 700px) {
-  /* The releases page retains its compact navigation. */
-  .release-page .container { position: relative; padding-top: 0; }
-  .release-page .container > header {
-    position: absolute;
-    top: calc(16px + var(--safe-top, 0px));
-    left: 24px;
-    right: 24px;
-    z-index: 2;
-    width: auto;
-    padding: 0;
-    gap: 16px;
-  }
   .release-page::before {
     background:
       radial-gradient(ellipse 110% 300px at 0% 0%, #548ce84d, transparent 75%),
@@ -183,7 +171,6 @@
 }
 
 @media (max-width: 370px) {
-  .release-page .container > header { left: 18px; right: 18px; }
   .container > main > .home-hero--slideshow { padding-inline: 12px; }
 }
 
