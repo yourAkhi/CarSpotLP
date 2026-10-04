@@ -6,14 +6,26 @@
   const layers = [...hero.querySelectorAll('.hero-background__layer')];
   if (layers.length !== 2) return;
 
+  const desktop = window.matchMedia('(min-width: 701px)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const base = 'assets/hero/';
-  // Share the desktop scenery across screen sizes for a consistent hero.
+  // Each scene has an independently composed portrait and landscape image.
   const scenes = [
-    'alpine', 'coast', 'urban', 'skyline', 'bridge', 'forest',
-    'industrial', 'harbor', 'winter'
-  ].map(scene => `desktop-${scene}.avif`);
-  const imageUrl = scene => `${base}${scene}`;
+    ['alpine', '06', '50% 0%'],
+    ['coast', '01', '65% 0%'],
+    ['urban', '03', '40% 0%'],
+    ['skyline', '02', '78% 0%'],
+    ['bridge', '04', '50% 0%'],
+    ['forest', '05', '65% 0%'],
+    ['industrial', '07', '50% 0%'],
+    ['harbor', '08', '55% 0%'],
+    ['winter', '09', '70% 0%']
+  ].map(([name, portrait, focus]) => ({
+    desktop: `desktop-${name}.avif`,
+    mobile: `mobile-${portrait}.avif`,
+    focus,
+  }));
+  const imageUrl = scene => `${base}${desktop.matches ? scene.desktop : scene.mobile}`;
   let currentScene = scenes[0];
   let activeLayer = 0;
   let order = [];
@@ -56,10 +68,10 @@
   }
 
   function setLayer(layer, scene) {
-    // Keep the picture source and fallback in sync at every screen size.
-    const url = imageUrl(scene);
-    layer.querySelector('source').srcset = url;
-    layer.querySelector('img').src = url;
+    // The browser selects the matching format, including during resizing.
+    layer.querySelector('source').srcset = `${base}${scene.desktop}`;
+    layer.querySelector('img').src = `${base}${scene.mobile}`;
+    layer.style.setProperty('--hero-mobile-focus', scene.focus);
   }
 
   function canPlay() {
@@ -102,6 +114,7 @@
 
   document.addEventListener('visibilitychange', updatePlayback);
   reducedMotion.addEventListener('change', updatePlayback);
+  desktop.addEventListener('change', updatePlayback);
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       inView = entries[0].isIntersecting;

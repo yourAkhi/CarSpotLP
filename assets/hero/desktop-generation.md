@@ -4,6 +4,12 @@ Six missing motifs were freshly generated with the built-in Imagegen tool, using
 
 Actual generated and delivered dimensions: 1672 x 941 px, approximately 16:9, matching the existing landscape assets. The requested generation size was 2560 x 1440; the tool returned the dimensions above. No portrait crops or upscaled mobile files are used on desktop. Assets were encoded as AVIF, quality 65, without resizing.
 
+## Responsive presentation
+
+At viewport widths up to 700 px, the slideshow uses the existing 900 x 1599 px portrait assets. Wider viewports use the landscape assets. Both formats represent the same scene, and the browser switches formats when the viewport crosses the breakpoint. Images keep their native proportions through `object-fit: cover`; mobile focal points retain the road, bridge, skyline or other main subject. The portrait assets are used for the initial image even without JavaScript, and the slideshow preloads only the format needed for the current viewport.
+
+Scene pairs: alpine/mobile-06, coast/mobile-01, urban/mobile-03, skyline/mobile-02, bridge/mobile-04, forest/mobile-05, industrial/mobile-07, harbor/mobile-08, winter/mobile-09.
+
 ## Final prompts
 
 ### desktop-skyline.avif

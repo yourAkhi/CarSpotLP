@@ -128,7 +128,8 @@
   line-height: 1;
   letter-spacing: -.06em;
 }
-.release-hero__version time { color: #b7c7dc; font-size: 12px; }
+.release-hero__number.release-hero__number--full { font-size: 60px; }
+.release-hero__version time, .release-hero__platforms { color: #b7c7dc; font-size: 12px; }
 
 .release-history { margin: 64px 0; scroll-margin-top: 28px; }
 .release-history__head {
@@ -227,6 +228,7 @@
   font-weight: 400;
   letter-spacing: 0;
 }
+.release-entry h3.release-version--full { font-size: clamp(38px, 4.5vw, 52px); }
 .release-entry time { color: #a6b2c4; font-size: 12px; }
 .release-entry__body { min-width: 0; padding-left: 32px; border-left: 1px solid #ffffff12; }
 .release-entry__title {
@@ -261,6 +263,20 @@
 }
 .release-change--new h5 > span,
 .release-change--fixed h5 > span { border-color: #82ffd230; background: #82ffd20a; color: var(--brand-2); }
+.release-change--new h5 > span { position: relative; font-size: 0; }
+.release-change--new h5 > span::before,
+.release-change--new h5 > span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+.release-change--new h5 > span::after { transform: translate(-50%, -50%) rotate(90deg); }
 .release-change ul { margin: 0; padding-left: 16px; color: #c9d4e3; font-size: 13px; line-height: 1.8; }
 .release-change li { padding-left: 3px; }
 .release-change li + li { margin-top: 12px; }

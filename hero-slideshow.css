@@ -1,11 +1,13 @@
 /* A vivid cartographic canvas with contours, routes and shooting spots. */
 .home-page,
-.release-page {
+.release-page,
+.legal-document {
   background-color: #0b1321;
 }
 
 .home-page::before,
-.release-page::before {
+.release-page::before,
+.legal-document::before {
   position: absolute;
   inset: 0;
   background:
@@ -17,7 +19,8 @@
 }
 
 .home-page::after,
-.release-page::after {
+.release-page::after,
+.legal-document::after {
   display: block;
   position: absolute;
   inset: 0;
@@ -104,6 +107,15 @@
 }
 
 @media (max-width: 700px) {
+  .home-hero--slideshow .hero-background__layer img {
+    object-fit: cover;
+    object-position: var(--hero-mobile-focus, 50% 0%);
+  }
+  .home-hero--slideshow .hero-background__shade {
+    background:
+      linear-gradient(180deg, #081527b8, #08152780 30%, #08152726 58%, #0b0f1ae6 100%),
+      linear-gradient(90deg, #08152726, transparent 70%);
+  }
   .release-page::before {
     background:
       radial-gradient(ellipse 110% 300px at 0% 0%, #548ce84d, transparent 75%),
