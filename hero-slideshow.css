@@ -116,19 +116,6 @@
       linear-gradient(180deg, #081527b8, #08152780 30%, #08152726 58%, #0b0f1ae6 100%),
       linear-gradient(90deg, #08152726, transparent 70%);
   }
-  .release-page::before {
-    background:
-      radial-gradient(ellipse 110% 300px at 0% 0%, #548ce84d, transparent 75%),
-      radial-gradient(ellipse 100% 460px at 100% 100%, #5be0c347, transparent 75%),
-      linear-gradient(155deg, #15263d, #0b1423 45%, #15283a);
-  }
-  .release-page::after {
-    background-size: 900px 700px;
-    background-position: 42% bottom;
-    opacity: .95;
-    mask-image: linear-gradient(90deg, #000, #000a 50%, #000);
-    -webkit-mask-image: linear-gradient(90deg, #000, #000a 50%, #000);
-  }
   /* Center the copy above the full-width app composition on mobile. */
   .home-page .container {
     padding: calc(20px + var(--safe-top, 0px)) 16px calc(24px + var(--safe-bottom, 0px));

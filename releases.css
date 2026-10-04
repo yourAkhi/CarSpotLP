@@ -1,18 +1,5 @@
-/* Release-specific canvas and update artwork; the logo uses the shared shell. */
+/* Release layout and update artwork; the page canvas uses hero-slideshow.css. */
 .release-page .container > header { border-bottom: 0; }
-
-.release-page::before {
-  background:
-    radial-gradient(ellipse 70% 540px at 0% 0%, #548ce833, transparent 75%),
-    radial-gradient(ellipse 55% 640px at 100% 35%, #5be0c31a, transparent 75%),
-    linear-gradient(145deg, #111f33, #0b1423 50%, #102231);
-}
-.release-page::after {
-  background: radial-gradient(circle, #92c6ec59 1px, transparent 1px) 0 0 / 28px 28px;
-  opacity: .3;
-  mask-image: linear-gradient(180deg, #000, #0005 65%, transparent);
-  -webkit-mask-image: linear-gradient(180deg, #000, #0005 65%, transparent);
-}
 
 .release-hero {
   position: relative;
