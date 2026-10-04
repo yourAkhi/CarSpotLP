@@ -6,19 +6,15 @@
   const layers = [...hero.querySelectorAll('.hero-background__layer')];
   if (layers.length !== 2) return;
 
-  const desktop = window.matchMedia('(min-width: 701px)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const base = 'assets/hero/';
-  const mobiles = ['06', '01', '03', '02', '04', '05', '07', '08', '09']
-    .map(scene => `mobile-${scene}.avif`);
-  // Each desktop scene has its own landscape asset; portraits are mobile-only.
-  const desktopScenes = [
+  // Share the desktop scenery across screen sizes for a consistent hero.
+  const scenes = [
     'alpine', 'coast', 'urban', 'skyline', 'bridge', 'forest',
     'industrial', 'harbor', 'winter'
   ].map(scene => `desktop-${scene}.avif`);
-  const scenes = () => desktop.matches ? desktopScenes : mobiles;
   const imageUrl = scene => `${base}${scene}`;
-  let currentScene = scenes()[0];
+  let currentScene = scenes[0];
   let activeLayer = 0;
   let order = [];
   let timer;
@@ -27,7 +23,7 @@
   const pending = new Map();
 
   function shuffle() {
-    order = scenes().filter(scene => scene !== currentScene);
+    order = scenes.filter(scene => scene !== currentScene);
     for (let i = order.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [order[i], order[j]] = [order[j], order[i]];
@@ -60,9 +56,7 @@
   }
 
   function setLayer(layer, scene) {
-    /* Set the fallback to the same selected resource to avoid downloading
-       portrait and landscape versions together. The first static picture
-       still selects its correct format even without JavaScript. */
+    // Keep the picture source and fallback in sync at every screen size.
     const url = imageUrl(scene);
     layer.querySelector('source').srcset = url;
     layer.querySelector('img').src = url;
@@ -108,13 +102,6 @@
 
   document.addEventListener('visibilitychange', updatePlayback);
   reducedMotion.addEventListener('change', updatePlayback);
-  desktop.addEventListener('change', () => {
-    stop();
-    currentScene = scenes()[0];
-    order = [];
-    layers.forEach(layer => setLayer(layer, currentScene));
-    updatePlayback();
-  });
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
       inView = entries[0].isIntersecting;

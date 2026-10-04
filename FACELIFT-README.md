@@ -5,7 +5,7 @@ Die Startseite basiert wieder auf dem originalen Auftritt von carspot.gg: dunkle
 ## Gestaltung
 
 - Ruhigere Hintergrundfarben, feinere Rahmen und einheitliche Typografie.
-- Desktop: Text und Downloads neben dem Original-Screenshot. Mobil: Text, Screenshot und Downloads untereinander.
+- Desktop: Text und Downloads neben dem Original-Screenshot. Mobil: Zentrierte Ueberschrift mit Beschreibung als Subtext, darunter die grosse App-Vorschau mit Katze und die zentrierten Download-Buttons. Navigation und Landschaftsmotive entsprechen der Desktopansicht.
 - Gemeinsame Gestaltung von Startseite, Releases und Rechtstexten durch facelift.css.
 - Android-Download und bestehende iOS-Installationsanleitung bleiben erhalten. iOS ist als Web-App gekennzeichnet.
 - Normales Seitenscrolling, Tastatur-Fokusmarkierungen und reduzierte Bewegung werden unterstuetzt.
@@ -18,6 +18,6 @@ Der vorherige Entwurf in premium.css und premium.js ist nicht mehr eingebunden. 
 
 ## Validierung
 
-Lokale Ressourcen, Sprungmarken, eindeutige HTML-IDs und JavaScript-Syntax geprueft. Keine visuelle Browserpruefung durchgefuehrt. Nicht veroeffentlicht.
+Mobil- und Desktoplayout bei 320 bis 1440 Pixeln lokal im Browser geprueft, inklusive Screenshots, horizontalem Ueberlauf und Android-/iOS-Download-Dialogen. JavaScript-Syntax geprueft. Nicht veroeffentlicht.
 
 Die Navigation besteht aus rechtsbuendig angeordneten Links zu Releases und Kontakt. Es gibt kein Seitenmenue. Die Features-Seite wurde entfernt. Der Hintergrund kombiniert die urspruengliche dunkelblaue Farbwelt mit einem groesseren weissen Verlauf hinter der App.

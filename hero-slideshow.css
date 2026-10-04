@@ -104,10 +104,8 @@
 }
 
 @media (max-width: 700px) {
-  /* Place the navigation over the hero photo without a separate header band. */
-  .home-page .container,
+  /* The releases page retains its compact navigation. */
   .release-page .container { position: relative; padding-top: 0; }
-  .home-page .container > header,
   .release-page .container > header {
     position: absolute;
     top: calc(16px + var(--safe-top, 0px));
@@ -118,15 +116,12 @@
     padding: 0;
     gap: 16px;
   }
-  /* Edge-to-edge imagery while retaining the site's original content gutters. */
-  .home-page::before,
   .release-page::before {
     background:
       radial-gradient(ellipse 110% 300px at 0% 0%, #548ce84d, transparent 75%),
       radial-gradient(ellipse 100% 460px at 100% 100%, #5be0c347, transparent 75%),
       linear-gradient(155deg, #15263d, #0b1423 45%, #15283a);
   }
-  .home-page::after,
   .release-page::after {
     background-size: 900px 700px;
     background-position: 42% bottom;
@@ -134,43 +129,62 @@
     mask-image: linear-gradient(90deg, #000, #000a 50%, #000);
     -webkit-mask-image: linear-gradient(90deg, #000, #000a 50%, #000);
   }
-  .hero-background {
-    left: -24px;
-    right: -24px;
-    border-radius: 0;
-    /* Fade the entire image into the page canvas, including its contour lines. */
-    --hero-bottom-fade: linear-gradient(
-      180deg,
-      #000 calc(100% - 320px),
-      #000e calc(100% - 240px),
-      #0008 calc(100% - 160px),
-      #0002 calc(100% - 80px),
-      transparent 100%
-    );
-    -webkit-mask-image: var(--hero-bottom-fade);
-    mask-image: var(--hero-bottom-fade);
+  /* Center the copy above the full-width app composition on mobile. */
+  .home-page .container {
+    padding: calc(20px + var(--safe-top, 0px)) 16px calc(24px + var(--safe-bottom, 0px));
   }
-  .home-page #kontakt {
-    position: relative;
-    margin-top: 0;
-    padding-top: 44px;
-    border-top: 1px solid #ffffff0c;
-  }
-  .hero-background__layer img { object-position: center top; }
-  .hero-background__shade {
-    background: linear-gradient(180deg, #081527c9 0%, #08152799 30%, #0815273d 55%, #0b0f1ac4 80%, #0b0f1a 100%);
+  .home-page .container > header { padding-bottom: 20px; }
+  .home-page .container > header .logo-badge {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
   }
   .container > main > .home-hero--slideshow {
-    padding-top: calc(132px + var(--safe-top, 0px));
-    padding-inline: 0;
-    padding-bottom: 32px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'eyebrow' 'heading' 'description' 'phone' 'download';
+    row-gap: 24px;
+    min-height: 0;
+    padding: 36px 20px 28px;
   }
+  .home-hero--slideshow .hero-copy {
+    display: contents;
+  }
+  .home-hero--slideshow .hero-eyebrow {
+    grid-area: eyebrow;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    margin-bottom: -6px;
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+  .home-hero--slideshow .hero-eyebrow::before { flex-shrink: 0; }
+  .container > main > .home-hero--slideshow h1 {
+    grid-area: heading;
+    text-align: center;
+    font-size: clamp(30px, 9vw, 48px);
+  }
+  .home-hero--slideshow .headline-ending { white-space: nowrap; }
+  .home-hero--slideshow .hero-emoji { margin-left: 0; transform: translate(-2px, -2px); }
+  .container > main > .home-hero--slideshow .hero-copy > p {
+    grid-area: description;
+    min-width: 0;
+    max-width: 400px;
+    margin: -8px auto 0;
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+  }
+  .home-hero--slideshow .mock { align-self: center; }
+  .home-hero--slideshow .home-download { min-width: 0; text-align: center; }
+  .home-hero--slideshow .download-label { font-size: 12px; }
+  .home-hero--slideshow .home-download .badges { justify-content: center; margin-inline: auto; }
+  .home-hero--slideshow .download-pointer { margin-inline: auto; }
 }
 
 @media (max-width: 370px) {
-  .home-page .container > header,
   .release-page .container > header { left: 18px; right: 18px; }
-  .hero-background { left: -18px; right: -18px; }
+  .container > main > .home-hero--slideshow { padding-inline: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
