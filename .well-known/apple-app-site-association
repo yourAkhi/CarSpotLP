@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "details": [{
+      "appIDs": ["S4P47C4NG6.gg.carspot"],
+      "components": [
+        { "/": "/auth/email-confirm", "comment": "CarSpot signup confirmation" },
+        { "/": "/auth/reset-password", "comment": "CarSpot password recovery" }
+      ]
+    }]
+  }
+}

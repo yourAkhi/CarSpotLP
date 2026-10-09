@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.CarSpot",
+      "sha256_cert_fingerprints": [
+        "3A:0C:B2:EC:60:55:B4:C5:C2:D6:47:35:D2:4F:33:E4:45:36:A5:90:21:9C:ED:AE:94:06:C3:B4:11:48:81:5D",
+        "A8:C5:D2:AF:AF:EC:25:90:6C:84:EE:8C:D6:99:4E:83:00:35:1A:E3:21:CA:47:E7:1A:9A:F2:42:53:A5:27:9D"
+      ]
+    }
+  }
+]
