@@ -335,3 +335,5 @@
   .release-entry__meta { column-gap: 10px; }
   .release-entry__meta > .release-label { font-size: 9px; letter-spacing: .07em; }
 }
+
+.release-change .release-subpoints { margin-top: 8px; list-style-type: circle; }
