@@ -17,7 +17,15 @@
   <meta property="og:image" content="https://carspot.gg/assets/carspot-preview.png"/>
   <meta property="og:image:alt" content="CarSpot – finde Spots für dein nächstes Auto-Shooting"/>
   <link rel="canonical" href="https://carspot.gg/download"/>
-  <link rel="icon" href="/assets/carspot-logo.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/carspot-favicon.png"/>
+  <link rel="preload" as="image" href="/assets/mascot/carspot-cat-camera-grin.png" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/mock.png" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/hero/desktop-alpine.avif" media="(min-width: 800px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/hero/mobile-06.avif" media="(max-width: 799px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/carspot-logo.png"/>
+  <link rel="preload" as="image" href="/assets/store-badges/google-play-de.svg"/>
+  <link rel="preload" as="image" href="/assets/store-badges/app-store-de.svg"/>
+  <script src="/image-ready.js"></script>
   <link rel="stylesheet" href="/download/download.css"/>
 </head>
 <body>
@@ -56,7 +64,7 @@
         <div class="preview-shade" aria-hidden="true"></div>
         <div class="phone">
           <img class="phone-image" src="/mock.png" width="894" height="1760" alt="CarSpot App mit Karte, Foto-Spots und direkter Routenplanung" fetchpriority="high" decoding="async"/>
-          <img class="mascot" src="/assets/mascot/carspot-cat-camera-grin.png" width="1024" height="1536" alt="" aria-hidden="true" decoding="async"/>
+          <img class="mascot" src="/assets/mascot/carspot-cat-camera-grin.png" width="1024" height="1536" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high"/>
         </div>
         <p class="preview-caption">Weniger suchen. <span>Mehr shooten.</span></p>
       </div>

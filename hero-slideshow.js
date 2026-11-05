@@ -32,6 +32,7 @@
   let timer;
   let generation = 0;
   let inView = true;
+  let imagesReady = false;
   const pending = new Map();
 
   function shuffle() {
@@ -60,6 +61,7 @@
         finish(true);
       };
       image.onerror = () => finish(false);
+      image.fetchPriority = 'low';
       image.src = url;
     });
     pending.set(url, request);
@@ -75,7 +77,7 @@
   }
 
   function canPlay() {
-    return !reducedMotion.matches && !document.hidden && inView;
+    return imagesReady && !reducedMotion.matches && !document.hidden && inView;
   }
 
   function stop() {
@@ -104,13 +106,25 @@
         currentScene = scene;
       }
       queue();
-    }, 3500);
+    }, 2500);
   }
 
   function updatePlayback() {
     stop();
+    // Warm the matching set again after switching between mobile and desktop.
+    if (imagesReady) void preloadScenes();
     queue();
   }
+
+  function preloadScenes() {
+    return Promise.all(scenes.map(scene => preload(imageUrl(scene))));
+  }
+
+  window.carspotHeroImagesReady = preloadScenes();
+  Promise.all([window.carspotImagesReady, window.carspotHeroImagesReady]).then(() => {
+    imagesReady = true;
+    updatePlayback();
+  });
 
   document.addEventListener('visibilitychange', updatePlayback);
   reducedMotion.addEventListener('change', updatePlayback);
