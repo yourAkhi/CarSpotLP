@@ -28,6 +28,8 @@
   <link rel="preload" as="image" href="/assets/store-badges/app-store-de.svg"/>
   <script src="/image-ready.js"></script>
   <link rel="stylesheet" href="/download/download.css"/>
+  <link rel="stylesheet" href="/store-dialog.css"/>
+  <link rel="stylesheet" href="/download/store-modal.css"/>
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -47,12 +49,12 @@
         <p class="description">Entdecke, speichere und teile besondere Locations für dein nächstes Auto-Shooting.</p>
 
         <div class="downloads" aria-label="CarSpot herunterladen">
-          <a class="store-link" href="https://apps.apple.com/de/app/carspot/id6811393644" aria-label="CarSpot im Apple App Store herunterladen">
+          <button class="store-link" type="button" data-open-store-modal="ios" aria-controls="store-modal" aria-haspopup="dialog" aria-label="CarSpot im Apple App Store herunterladen">
             <img src="/assets/store-badges/app-store-de.svg" width="180" height="54" alt="Laden im App Store"/>
-          </a>
-          <a class="store-link" href="https://play.google.com/store/apps/details?id=com.CarSpot" aria-label="CarSpot bei Google Play herunterladen">
+          </button>
+          <button class="store-link" type="button" data-open-store-modal="android" aria-controls="store-modal" aria-haspopup="dialog" aria-label="CarSpot bei Google Play herunterladen">
             <img src="/assets/store-badges/google-play-de.svg" width="180" height="54" alt="Jetzt bei Google Play"/>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -70,7 +72,6 @@
           <img class="phone-image" src="/mock.png" width="894" height="1760" alt="CarSpot App mit Karte, Foto-Spots und direkter Routenplanung" fetchpriority="high" decoding="async"/>
           <img class="mascot" src="/assets/mascot/carspot-cat-camera-grin.png" width="1024" height="1536" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high"/>
         </div>
-        <p class="preview-caption">Weniger suchen. <span>Mehr shooten.</span></p>
       </div>
     </main>
 
@@ -83,6 +84,38 @@
       </nav>
     </footer>
   </div>
+  <div aria-describedby="store-modal-description" aria-hidden="true" aria-labelledby="store-modal-heading" aria-modal="true" class="store-modal" hidden id="store-modal" role="dialog">
+    <div class="store-modal__backdrop" data-close-store-modal></div>
+    <div class="store-modal__dialog" role="document">
+      <button aria-label="Fenster schließen" class="store-modal__close" data-close-store-modal type="button">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+      <div aria-hidden="true" class="store-modal__brand">
+        <div class="store-modal__logo-wrap"><img alt="" src="/assets/carspot-logo.png" width="68" height="68"/></div>
+      </div>
+      <div class="store-modal__view" data-store-modal-view="store">
+        <div class="store-modal__eyebrow" data-store-modal-eyebrow id="store-modal-heading">Danke für deinen Support</div>
+        <p class="store-modal__description" id="store-modal-description">
+          In CarSpot sind unzählige Stunden Entwicklung, viele Tests und eine
+          große Portion Herzblut geflossen. Jeder Download, jedes Feedback und
+          jeder geteilte Spot hilft dabei, das Projekt weiter wachsen zu lassen.
+          <span class="store-modal__thank-you">Danke, dass du ein Teil davon bist! 🥹😊</span>
+        </p>
+        <div aria-hidden="true" class="store-modal__divider">
+          <span></span><strong data-store-modal-platform>LOS GEHT'S! 😎</strong><span></span>
+        </div>
+        <div class="store-modal__actions">
+          <a aria-label="CarSpot im App Store öffnen" class="store-modal__store-link" data-store-link="ios" href="https://apps.apple.com/de/app/carspot/id6811393644">
+            <img alt="Laden im App Store" height="54" src="/assets/store-badges/app-store-de.svg" width="180"/>
+          </a>
+          <a aria-label="CarSpot bei Google Play öffnen" class="store-modal__store-link" data-store-link="android" href="https://play.google.com/store/apps/details?id=com.CarSpot">
+            <img alt="Jetzt bei Google Play" height="54" src="/assets/store-badges/google-play-de.svg" width="180"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/download/slideshow.js"></script>
+  <script src="/store-modal.js"></script>
 </body>
 </html>

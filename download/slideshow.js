@@ -90,7 +90,7 @@
         currentScene = scene;
       }
       queue();
-    }, 3500);
+    }, 2500);
   }
 
   function updatePlayback() {
