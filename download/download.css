@@ -76,7 +76,7 @@ h1 > span { color: var(--mint); background: linear-gradient(100deg, #8cbcff, #9a
 .announcement strong { font-weight: 600; color: var(--text); }
 .description { max-width: 370px; margin: clamp(6px, 1.2dvh, 12px) auto 0; color: var(--muted); font-size: clamp(11px, 1.7dvh, 13px); line-height: 1.5; text-wrap: pretty; }
 .downloads { --store-gap: 10px; display: flex; justify-content: center; gap: var(--store-gap); width: min(100%, 370px); margin: clamp(12px, 2dvh, 25px) auto 0; }
-.store-link { display: flex; flex: 0 1 calc(45% - var(--store-gap) * .45); min-width: 0; min-height: 48px; align-items: center; border-radius: 9px; transition: transform .18s ease; }
+.store-link { display: flex; flex: 0 1 calc(40.5% - var(--store-gap) * .405); min-width: 0; min-height: 48px; align-items: center; border-radius: 9px; transition: transform .18s ease; }
 .store-link img { width: 100%; height: auto; }
 .store-link:hover { transform: translateY(-3px); }
 .app-preview {
