@@ -20,8 +20,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/carspot-favicon.png"/>
   <link rel="preload" as="image" href="/assets/mascot/carspot-cat-camera-grin.png" fetchpriority="high"/>
   <link rel="preload" as="image" href="/mock.png" fetchpriority="high"/>
-  <link rel="preload" as="image" href="/assets/hero/desktop-alpine.avif" media="(min-width: 800px)" fetchpriority="high"/>
-  <link rel="preload" as="image" href="/assets/hero/mobile-06.avif" media="(max-width: 799px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/hero/desktop-alpine.avif" media="(max-width: 899px), (max-height: 500px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/hero/mobile-06.avif" media="(min-width: 900px) and (min-height: 501px)" fetchpriority="high"/>
+  <link rel="preload" as="image" href="/assets/background-contours.svg"/>
   <link rel="preload" as="image" href="/assets/carspot-logo.png"/>
   <link rel="preload" as="image" href="/assets/store-badges/google-play-de.svg"/>
   <link rel="preload" as="image" href="/assets/store-badges/app-store-de.svg"/>
@@ -55,10 +56,14 @@
         </div>
       </div>
 
-      <div class="app-preview">
+      <div class="app-preview" data-preview-slideshow>
+        <picture class="landscape is-active" aria-hidden="true">
+          <source media="(max-width: 899px), (max-height: 500px)" srcset="/assets/hero/desktop-alpine.avif"/>
+          <img src="/assets/hero/mobile-06.avif" alt="" width="900" height="1599" decoding="async"/>
+        </picture>
         <picture class="landscape" aria-hidden="true">
-          <source media="(min-width: 800px)" srcset="/assets/hero/desktop-alpine.avif"/>
-          <img src="/assets/hero/mobile-06.avif" alt="" width="1024" height="1536" decoding="async"/>
+          <source media="(max-width: 899px), (max-height: 500px)" srcset="/assets/hero/desktop-alpine.avif"/>
+          <img src="/assets/hero/mobile-06.avif" alt="" width="900" height="1599" decoding="async"/>
         </picture>
         <div class="preview-shade" aria-hidden="true"></div>
         <div class="phone">
@@ -78,5 +83,6 @@
       </nav>
     </footer>
   </div>
+  <script src="/download/slideshow.js"></script>
 </body>
 </html>

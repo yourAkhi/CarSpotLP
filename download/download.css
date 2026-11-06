@@ -12,12 +12,28 @@
 
 * { box-sizing: border-box; }
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-width: 280px;
+  background: var(--bg);
+}
+body::before,
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; }
+body::before {
+  z-index: -2;
   background:
-    radial-gradient(ellipse 90% 480px at 0 0, #538bdf26, transparent 75%),
-    radial-gradient(ellipse 75% 600px at 100% 80%, #5be0c31a, transparent 75%),
-    var(--bg);
+    radial-gradient(ellipse 55% 540px at 0% 0%, #548ce866, transparent 75%),
+    radial-gradient(ellipse 48% 720px at 105% 50%, #5be0c34d, transparent 74%),
+    radial-gradient(ellipse 65% 400px at 15% 100%, #5e8fea59, transparent 76%),
+    radial-gradient(ellipse 40% 320px at 95% 100%, #83e8d23b, transparent 75%),
+    linear-gradient(145deg, #15263d 0%, #0b1423 48%, #15283a 100%);
+}
+body::after {
+  z-index: -1;
+  background: url('/assets/background-contours.svg') center top / 100% auto repeat-y;
+  mask-image: linear-gradient(90deg, #000, #0009 36%, #0009 64%, #000);
+  -webkit-mask-image: linear-gradient(90deg, #000, #0009 36%, #0009 64%, #000);
 }
 a { color: inherit; -webkit-tap-highlight-color: transparent; }
 a:focus-visible { outline: 3px solid var(--mint); outline-offset: 6px; }
@@ -79,7 +95,9 @@ h1 > span { color: var(--mint); background: linear-gradient(100deg, #8cbcff, #9a
   background: #13263a;
 }
 .landscape, .landscape img, .preview-shade { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
-.landscape img { object-fit: cover; object-position: center 47%; }
+.landscape { display: block; opacity: 0; transition: opacity 800ms ease-in-out; }
+.landscape.is-active { opacity: 1; }
+.landscape img { object-fit: cover; object-position: var(--preview-focus, center 47%); }
 .preview-shade { background: linear-gradient(180deg, #0b142326, #0b14233b 35%, #0b1423e6 90%, #0b1423); }
 .phone { position: relative; flex: 0 1 auto; min-height: 0; height: calc(100% - 30px); max-height: 465px; max-width: 65%; aspect-ratio: 894 / 1760; margin-left: 28px; }
 .phone-image { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 16px 20px #0009); }
@@ -119,6 +137,7 @@ h1 > span { color: var(--mint); background: linear-gradient(100deg, #8cbcff, #9a
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .landscape { transition: none; }
   .store-link { transition: none; }
   .store-link:hover { transform: none; }
 }
