@@ -83,7 +83,8 @@
   };
 
   openButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
       openModal(button.dataset.openStoreModal || "ios");
     });
   });
