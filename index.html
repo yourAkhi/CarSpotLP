@@ -43,8 +43,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/carspot-favicon.png"/>
 </head>
 <body class="home-page">
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
-<div class="container">
+<a class="skip-link" href="#main"><span data-nosnippet>Zum Inhalt springen</span></a>
+<!-- Use the meta description for search snippets; exclude page copy and image alt text. -->
+<div class="container" data-nosnippet>
 <header>
 <a class="logo logo--xl" href="index.html" aria-label="CarSpot Startseite">
 <div class="logo-badge">
@@ -127,7 +128,7 @@
 </div>
 </footer>
 </div>
-<div aria-describedby="store-modal-description" aria-hidden="true" aria-labelledby="store-modal-heading" aria-modal="true" class="store-modal" hidden="" id="store-modal" role="dialog">
+<div aria-describedby="store-modal-description" aria-hidden="true" aria-labelledby="store-modal-heading" aria-modal="true" class="store-modal" data-nosnippet hidden="" id="store-modal" role="dialog">
 <div class="store-modal__backdrop" data-close-store-modal=""></div>
 <div class="store-modal__dialog" role="document">
 <button aria-label="Fenster schließen" class="store-modal__close" data-close-store-modal="" type="button">
@@ -169,7 +170,7 @@
 <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
-<div aria-hidden="true" class="cookie-banner" hidden="" id="cookie-banner">
+<div aria-hidden="true" class="cookie-banner" data-nosnippet hidden="" id="cookie-banner">
 <div class="cookie-banner__inner">
 <p class="cookie-banner__text">
 <strong>Hinweis zu Cookies:</strong> Auf dieser Website werden aktuell
