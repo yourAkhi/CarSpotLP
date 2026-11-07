@@ -1,0 +1,15 @@
+/* Keep the existing desktop layout; use the download layout up to 700px. */
+.mobile-home {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .home-page > .container,
+  .home-page > .skip-link {
+    display: none;
+  }
+
+  .mobile-home {
+    display: grid;
+  }
+}
