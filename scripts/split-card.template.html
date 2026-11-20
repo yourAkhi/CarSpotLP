@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de" class="split-document">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="{{profileUrl}}">
+  <title>{{vehicle}} von {{owner}} · {{serial}} · CarSpot</title>
+  <link rel="icon" href="/assets/carspot-favicon.png">
+  <link rel="preload" as="image" href="{{coverUrl}}" fetchpriority="high">
+  <script src="/image-ready.js?v=2"></script>
+  <link rel="stylesheet" href="/id/share-card.css?v=3">
+  <link rel="stylesheet" href="/id/split-card.css?v=2">
+  <script src="/id/share-card.js?v=3" defer></script>
+</head>
+<body class="share-card-page split-page">
+  <header class="split-header">
+    <a href="/" aria-label="CarSpot – zur Startseite"><img src="/assets/share-card/split/carspot-wordmark.png" alt="CarSpot" width="228" height="58"></a>
+    <span class="split-serial">{{serial}}</span>
+  </header>
+  <main class="build-frame">
+    <article class="build-card" aria-labelledby="build-title">
+      <div class="build-cover">
+        <img class="cover-photo" src="{{coverUrl}}" alt="{{coverAlt}}" fetchpriority="high"{{cropStyle}}>
+        {{photoLogo}}
+      </div>
+      <div class="build-panels">
+        <section class="build-identity">
+          <p class="build-label">MEIN BUILD</p>
+          <h1 id="build-title" dir="auto">{{vehicle}}</h1>
+          {{variantText}}
+          <ul class="build-facts">{{pills}}</ul>
+          <div class="build-owner">{{avatarImage}}<div>Besitzer<strong dir="auto">{{owner}}</strong></div></div>
+        </section>
+        <div class="build-metal">
+          {{quote}}
+          {{hashtag}}
+          {{signature}}
+          {{buildAction}}
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="split-footer"><nav aria-label="Rechtliche Informationen">
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </nav></footer>
+  {{detailsDialog}}
+</body>
+</html>

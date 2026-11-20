@@ -5,6 +5,7 @@
   ],
   "routes": [
     { "src": "^/download/?$", "dest": "/download/index.html" },
+    { "src": "^/id/([a-z0-9_-]+)/?$", "dest": "/id/$1/index.html" },
     { "handle": "filesystem" }
   ]
 }

@@ -1,0 +1,222 @@
+.share-card-page {
+  --viewport-height: 100vh;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --header-height: clamp(2.75rem, min(12.7vw, calc(var(--viewport-height) * .075)), 6.125rem);
+  --navy: #172842;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: var(--viewport-height);
+  margin: 0;
+  color-scheme: light;
+  color: #122038;
+  background: #e7e8ed;
+  font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+@supports (height: 100dvh) {
+  .share-card-page { --viewport-height: 100dvh; }
+}
+
+.share-card-page *, .share-card-page *::before, .share-card-page *::after { box-sizing: border-box; }
+.share-card-page button, .share-card-page input { font: inherit; }
+.share-card-page button { cursor: pointer; }
+.share-card-page :focus-visible { outline: 2px solid #245e9c; outline-offset: 3px; }
+
+.card-header {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--safe-top);
+  color: #fafbfd;
+  background: var(--navy) url("/assets/share-card/navy-satin.webp") center / 100% 100% no-repeat;
+  box-shadow: inset 0 -1px #dfe5ee, 0 4px 12px rgb(31 38 56 / 17%);
+}
+
+.card-header-inner {
+  --gutter: clamp(1.1rem, 8.85vw, 7.25rem);
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  max-width: 92rem;
+  margin-inline: auto;
+  padding-left: max(var(--gutter), var(--safe-left));
+  padding-right: max(var(--gutter), calc(var(--safe-right) + 10px));
+}
+
+.card-brand { display: flex; align-items: center; height: 100%; }
+.card-brand img {
+  display: block;
+  width: clamp(132px, min(26.4vw, calc(var(--viewport-height) * .236)), 292px);
+  height: auto;
+}
+
+.card-header-divider {
+  width: 1px;
+  height: clamp(24px, calc(var(--viewport-height) * .034), 39px);
+  margin-inline: auto clamp(8px, 2.7vw, 30px);
+  background: rgb(243 247 255 / 80%);
+}
+
+.card-share {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline-end: -10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+}
+.card-share svg { width: clamp(21px, 3.35vw, 36px); height: auto; }
+.card-header :focus-visible { outline-color: white; outline-offset: -2px; }
+
+.card-surface {
+  --usable-width: calc(100vw - var(--safe-left) - var(--safe-right));
+  --usable-height: calc(var(--viewport-height) - var(--header-height) - var(--safe-top) - var(--safe-bottom));
+  --preferred-width: calc(var(--usable-height) * .617);
+  --gap-factor: .044;
+  /* Reserve the label, footer and rule, then fit the full image and its gap. */
+  --height-limit: max(1px, calc((var(--usable-height) - 5rem) / (var(--height-per-width) + var(--gap-factor))));
+  --card-width: min(calc(var(--usable-width) * .915), var(--preferred-width), var(--height-limit), var(--native-width));
+  --label-width: min(calc(var(--usable-width) - 1rem), max(13rem, calc(var(--card-width) * 1.12)));
+  --rule-width: min(calc(var(--usable-width) - .75rem), max(15rem, calc(var(--card-width) * 1.145)));
+  --upper-space: .16fr;
+  --after-card: .40fr;
+  --before-links: .28fr;
+  --lower-space: .16fr;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, var(--upper-space)) [card] max-content minmax(0, var(--after-card))
+                      [rule] 1px minmax(0, var(--before-links)) [links] max-content minmax(0, var(--lower-space));
+  justify-items: center;
+  padding: 0 var(--safe-right) var(--safe-bottom) var(--safe-left);
+  background: #e7e8ed url("/assets/share-card/pearl-carbon.webp") center top / 100% auto repeat-y;
+}
+
+.card-group {
+  grid-row: card;
+  display: grid;
+  justify-items: center;
+  width: var(--label-width);
+  row-gap: calc(var(--card-width) * var(--gap-factor));
+}
+
+.card-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin: 0;
+  padding-bottom: clamp(7px, calc(var(--card-width) * .0185), 14px);
+  border-bottom: 1px solid #536075;
+  font-size: clamp(.813rem, calc(var(--card-width) * .031), 1.44rem);
+  font-weight: 560;
+  line-height: 1;
+  letter-spacing: .205em;
+}
+.card-serial { font-weight: 550; letter-spacing: .105em; font-variant-numeric: tabular-nums; }
+
+.card-artwork {
+  position: relative;
+  width: var(--card-width);
+  margin: 0;
+  border-radius: calc(var(--card-width) * .065);
+  box-shadow: 0 calc(var(--card-width) * .018) calc(var(--card-width) * .036) calc(var(--card-width) * -.009) rgb(26 31 44 / 29%),
+              0 2px 4px rgb(34 41 56 / 11%);
+}
+.card-artwork img { display: block; width: 100%; height: auto; }
+
+/* The printed action occupies the bottom row of the silver panel. */
+.card-details {
+  position: absolute;
+  inset-inline: 42% 2.6%;
+  bottom: 2.3%;
+  height: 7.55%;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+}
+.card-details:focus-visible { outline-offset: -2px; }
+
+.card-surface::before {
+  content: "";
+  grid-row: rule;
+  width: var(--rule-width);
+  background: #7a8290;
+}
+.card-footer { grid-row: links; max-width: 100%; }
+.card-footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, calc(var(--card-width) * .04), 30px);
+}
+.card-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #101e34;
+  font-size: clamp(.844rem, calc(var(--card-width) * .03), 1.375rem);
+  font-weight: 450;
+  text-decoration: none;
+}
+.card-footer nav span { width: 1px; height: 1.05em; background: #35445d; }
+
+@media (max-aspect-ratio: 5/7) {
+  .card-surface { --upper-space: .12fr; --after-card: .68fr; --before-links: .12fr; --lower-space: .08fr; }
+}
+@media (orientation: landscape) and (max-height: 480px) {
+  .card-surface { --preferred-width: var(--native-width); }
+}
+@media (hover: hover) {
+  .card-share:hover { background: rgb(255 255 255 / 8%); }
+  .card-details:hover { background: rgb(255 255 255 / 10%); }
+  .card-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+}
+
+.card-dialog {
+  width: min(24rem, calc(100% - var(--safe-left) - var(--safe-right) - 2rem));
+  max-height: calc(var(--viewport-height) - var(--safe-top) - var(--safe-bottom) - 2rem);
+  margin: auto;
+  padding: 1.5rem;
+  border: 1px solid #c1c7d0;
+  border-radius: 1rem;
+  color: var(--navy);
+  background: #f3f4f6;
+  box-shadow: 0 18px 64px rgb(12 23 40 / 30%);
+}
+.card-dialog::backdrop { background: rgb(10 20 36 / 64%); }
+.card-dialog h2 { margin: 0 0 1rem; font-size: 1.5rem; }
+.card-dialog p, .card-dialog label { margin: .75rem 0; line-height: 1.5; }
+.card-facts { margin: 1rem 0; }
+.card-facts div { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px solid #c7cdd6; }
+.card-facts dd { margin: 0; font-weight: 600; }
+.card-dialog input { width: 100%; padding: .65rem; margin-top: .5rem; }
+.card-dialog button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: .75rem;
+  padding: .6rem 1rem;
+  border: 0;
+  border-radius: .5rem;
+  background: var(--navy);
+  color: white;
+}
+.card-status {
+  position: fixed;
+  bottom: calc(var(--safe-bottom) + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+  color: white;
+  background: var(--navy);
+  font-size: .875rem;
+  pointer-events: none;
+}
+.card-status:not(:empty) { padding: .6rem 1rem; }

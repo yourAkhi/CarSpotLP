@@ -2,6 +2,7 @@
   'use strict';
 
   const root = document.documentElement;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const style = document.createElement('style');
   style.textContent = `
     html.images-loading { background: #0b1321; overflow: hidden; }
@@ -58,7 +59,7 @@
     root.classList.add('images-revealing');
     root.classList.remove('images-loading');
     resolveReady();
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (reducedMotion.matches) {
       cleanup();
     } else {
       // Keep the transition styles until the blur has finished fading out.
@@ -93,9 +94,14 @@
       image.src = link.href;
       images.push(image);
     }
+    // On a cached navigation, paint the blurred state once before transitioning.
+    const firstPaint = !document.hidden && !reducedMotion.matches
+      ? new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+      : undefined;
     await Promise.allSettled([
       ...images.map(decode),
       window.carspotHeroImagesReady,
+      firstPaint,
     ]);
     reveal();
   }
