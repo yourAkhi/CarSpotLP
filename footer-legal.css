@@ -25,13 +25,20 @@ footer .legal-row a {
 footer .legal-row span { opacity: .55; }
 footer .legal-row a:is(:hover, :focus-visible) { opacity: 1; text-decoration: underline; }
 
-.build-page {
-  height: 100dvh;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+.build-page #root {
+  height: auto;
+  min-height: 100dvh;
 }
 
-.build-page #root { height: 100%; }
+.build-page .public-garage {
+  height: auto;
+  overflow: visible;
+}
+
+.build-page .public-garage > .community-builds-page {
+  min-height: 100dvh;
+}
+
 .build-page footer {
   width: min(100%, 640px);
   margin-inline: auto;
