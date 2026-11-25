@@ -12,7 +12,7 @@ Die Startseite basiert wieder auf dem originalen Auftritt von carspot.gg: dunkle
 
 ## Vorschau
 
-index.html im Browser oeffnen oder `python -m http.server 8080 --bind 127.0.0.1` starten und http://127.0.0.1:8080 aufrufen. Keine Installation und kein Build erforderlich. Die statische Vercel-Struktur bleibt erhalten.
+index.html im Browser oeffnen oder `python -m http.server 8080 --bind 127.0.0.1` starten und http://127.0.0.1:8080 aufrufen. Keine Installation und kein Build erforderlich. Die Website wird statisch über Cloudflare ausgeliefert.
 
 Der vorherige Entwurf in premium.css und premium.js ist nicht mehr eingebunden. Bestehende Basisstile und Dialogskripte werden weiterverwendet.
 
