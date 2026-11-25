@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#142235" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="rotate(-10 32 32)">
+    <ellipse cx="26" cy="32" rx="19.4" ry="26.5" fill="#fff" stroke-width="2"/>
+    <path d="M22 6.1C11.8 9.1 7.8 20.3 7.8 32S12 54.8 22 58M26 5.5C14.8 6.5 10.3 19.4 10.3 32S15 57.1 26 58.5" stroke-width="1"/>
+    <ellipse cx="35.5" cy="32" rx="20" ry="26.5" fill="#fff" stroke-width="1.9"/>
+    <ellipse cx="35.5" cy="32" rx="18.3" ry="24.7" stroke-width="1"/>
+    <path d="M34.8 8c8.6.2 15.7 10.9 15.7 24s-7.1 23.8-15.7 24" stroke-width="1.1"/>
+    <ellipse cx="31.8" cy="32" rx="15.4" ry="21.8" fill="#fff" stroke-width="1.2"/>
+    <ellipse cx="31.8" cy="32" rx="14.3" ry="20.4" stroke-width=".8"/>
+    <g stroke-width=".95">
+      <path d="M28.50 27.68 L38.02 13.63 M35.10 27.68 L25.58 13.63"/>
+      <path d="M30.54 26.04 L43.62 20.53 M36.26 30.48 L32.85 11.66"/>
+      <path d="M32.93 25.99 L46.06 30.50 M36.23 33.69 L39.84 15.13"/>
+      <path d="M35.00 27.55 L44.68 40.87 M35.00 36.45 L44.68 23.13"/>
+      <path d="M36.23 30.31 L39.84 48.87 M32.93 38.01 L46.06 33.50"/>
+      <path d="M36.26 33.52 L32.85 52.34 M30.54 37.96 L43.62 43.47"/>
+      <path d="M35.10 36.32 L25.58 50.37 M28.50 36.32 L38.02 50.37"/>
+      <path d="M33.06 37.96 L19.98 43.47 M27.34 33.52 L30.75 52.34"/>
+      <path d="M30.67 38.01 L17.54 33.50 M27.37 30.31 L23.76 48.87"/>
+      <path d="M28.60 36.45 L18.92 23.13 M28.60 27.55 L18.92 40.87"/>
+      <path d="M27.37 33.69 L23.76 15.13 M30.67 25.99 L17.54 30.50"/>
+      <path d="M27.34 30.48 L30.75 11.66 M33.06 26.04 L19.98 20.53"/>
+    </g>
+    <ellipse cx="31.8" cy="32" rx="4.65" ry="6.2" fill="#fff" stroke-width="1.1"/>
+    <g fill="#142235" stroke="none">
+      <ellipse cx="31.80" cy="28.30" rx=".58" ry=".72"/>
+      <ellipse cx="34.42" cy="30.86" rx=".58" ry=".72"/>
+      <ellipse cx="33.42" cy="34.99" rx=".58" ry=".72"/>
+      <ellipse cx="30.18" cy="34.99" rx=".58" ry=".72"/>
+      <ellipse cx="29.18" cy="30.86" rx=".58" ry=".72"/>
+    </g>
+    <ellipse cx="31.8" cy="32" rx="1.2" ry="1.6" stroke-width="1"/>
+    <path d="m47.7 20.7 1.7-.7" stroke-width="1.4"/>
+  </g>
+</svg>

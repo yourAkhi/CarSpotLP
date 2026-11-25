@@ -1,0 +1,21 @@
+Vehicle catalogue data attribution
+
+Data sourced from cardata.wiki: https://cardata.wiki
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Source terms: https://cardata.wiki/terms
+
+Imported from the user-supplied CarSpot_Fahrzeugkatalog_CSV_Paket on 2026-11-13.
+The supplied package records its retrieval date as 2026-11-13 and its source
+status as community_ungeprueft (community data, not independently verified).
+
+Changes in the supplied package: name normalization, filtering, deterministic
+IDs, dropdown labels, conversion of kW to PS, and automatic quality flags.
+Changes in CarSpot: extracted make/model/engine labels; joined records by the
+supplied IDs; reconciled spelling aliases with existing suggestions; removed
+duplicate suggestions within each parent; sorted options; localized the display
+of source-value disambiguators. Engine periods and distinct variants are retained.
+
+These editable suggestions are bundled locally. Choosing a name does not infer
+or overwrite technical specifications, dates, market availability or compatibility.
+Existing curated manufacturer-source suggestions remain included separately.
