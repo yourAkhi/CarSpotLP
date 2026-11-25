@@ -5,6 +5,7 @@
  */
 
 :root {
+  -webkit-tap-highlight-color: transparent;
   --site-max-width: 1120px;
   --site-inline-padding: 24px;
   --site-hero-padding: 40px;

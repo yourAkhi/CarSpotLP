@@ -1,0 +1,41 @@
+footer .footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+footer .legal-row {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+footer .legal-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: inherit;
+  opacity: .8;
+  text-decoration: none;
+}
+
+footer .legal-row span { opacity: .55; }
+footer .legal-row a:is(:hover, :focus-visible) { opacity: 1; text-decoration: underline; }
+
+.build-page {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.build-page #root { height: 100%; }
+.build-page footer {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: white;
+  color: #526070;
+}

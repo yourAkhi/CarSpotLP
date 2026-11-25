@@ -16,6 +16,7 @@
     <link href="hero-slideshow.css" rel="stylesheet"/>
     <link href="privacy.css" rel="stylesheet"/>
     <link href="assets/carspot-favicon.png" rel="icon" type="image/png" sizes="192x192"/>
+<link rel="stylesheet" href="/footer-legal.css">
 </head>
   <body class="legal-document">
     <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -60,12 +61,7 @@
       <footer>
         <div>© <span id="y"></span> CarSpot</div>
 
-        <div class="footer-legal-links">
-          <a href="impressum.html">Impressum</a>
-          <span class="footer-separator">·</span>
-          <a href="datenschutz.html" aria-current="page">Datenschutz</a>
-          
-
+        <div class="footer-actions">
           <button
             id="open-cookie-settings"
             class="cookie-settings-footer cookie-settings-footer--fingerprint is-visible"
@@ -85,7 +81,12 @@
             </svg>
           </button>
         </div>
-      </footer>
+      <nav class="legal-row" aria-label="Rechtliche Informationen">
+  <a href="/impressum.html">Impressum</a>
+  <span aria-hidden="true">&middot;</span>
+  <a href="/datenschutz.html" aria-current="page">Datenschutz</a>
+</nav>
+</footer>
     </div>
 
     <script>
