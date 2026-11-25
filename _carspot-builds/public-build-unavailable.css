@@ -1,0 +1,80 @@
+.community-builds-page[data-build-unavailable] {
+  --unavailable-header-height: 3.125rem;
+  --unavailable-gutter: clamp(1rem, 4.9cqw, 2rem);
+  --unavailable-navy: #0d1f2e;
+  padding-block-end: 0;
+}
+
+[data-build-unavailable] .public-build-header {
+  min-block-size: calc(var(--unavailable-header-height) + var(--safe-top));
+  padding-inline-start: max(var(--unavailable-gutter), var(--safe-left));
+  padding-inline-end: max(var(--unavailable-gutter), var(--safe-right));
+}
+
+.public-build-unavailable-brand {
+  color: #172842;
+  font: italic 800 clamp(1.625rem, 6.8cqw, 2rem)/1 Arial, sans-serif;
+  letter-spacing: -.04em;
+}
+
+.public-build-unavailable {
+  color: #fff;
+  background-color: var(--unavailable-navy);
+}
+
+.public-build-unavailable__hero,
+.public-build-unavailable__details {
+  padding-inline-start: max(var(--unavailable-gutter), var(--safe-left));
+  padding-inline-end: max(var(--unavailable-gutter), var(--safe-right));
+}
+
+.public-build-unavailable__hero {
+  display: grid;
+  align-content: end;
+  min-block-size: calc(100svh - var(--unavailable-header-height) - var(--safe-top));
+  padding-block-start: clamp(12rem, 53svh, 33rem);
+  padding-block-end: clamp(2.5rem, 11.5svh, 7rem);
+  background:
+    linear-gradient(180deg, transparent 55%, #0d1f2e26 72%, var(--unavailable-navy)),
+    url('./assets/empty-garage.jpg') center / cover no-repeat;
+}
+
+.public-build-unavailable__hero h1 {
+  max-inline-size: 14ch;
+  font-family: Arial, system-ui, sans-serif;
+  font-size: clamp(2.25rem, 13cqw, 4.75rem);
+  font-weight: 700;
+  line-height: .96;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.public-build-unavailable__hero:lang(ar) h1 {
+  font-family: inherit;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+
+.public-build-unavailable__details {
+  display: grid;
+  justify-items: start;
+  gap: .75rem;
+  padding-block: 1rem 2rem;
+  line-height: 1.5;
+}
+
+.public-build-unavailable__garage-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  background: #fff;
+  color: #172842;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.public-build-unavailable__garage-link:hover {
+  background: #eef0f3;
+}
