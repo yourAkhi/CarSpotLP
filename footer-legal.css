@@ -40,9 +40,22 @@ footer .legal-row a:is(:hover, :focus-visible) { opacity: 1; text-decoration: un
 }
 
 .build-page footer {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
   width: min(100%, 640px);
   margin-inline: auto;
   padding-bottom: env(safe-area-inset-bottom);
   background: white;
   color: #526070;
 }
+
+.build-page .build-credit {
+  padding: 14px 8px;
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.build-page .build-credit :is(strong, span) { color: #172842; }
+.build-page .build-credit:is(:hover, :focus-visible) { text-decoration: underline; }
